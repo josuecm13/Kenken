@@ -1,4 +1,4 @@
-package board.logic.shapes;
+package board.logic.board;
 
 public class Operation {
 
