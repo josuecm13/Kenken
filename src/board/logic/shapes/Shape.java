@@ -4,6 +4,7 @@ package board.logic.shapes;
 import board.logic.board.Operation;
 
 import java.util.List;
+import java.util.Random;
 
 public abstract class Shape {
     public enum ShapeTypeID {LTYPE,JTYPE,OTYPE,ITYPE,TTYPE,STYPE,ZTYPE,TWOTYPE,ONETYPE}
@@ -21,6 +22,20 @@ public abstract class Shape {
         }
         return false;
     }
+
+    public static int getCount(){
+        return 9;
+    }
+
+    public void placeShape(int board[][], int i, int j){
+        Random rand = new Random();
+        int option = rand.nextInt(orientations.length);
+        while (!fits(board, i, j, option)){
+            option = rand.nextInt(orientations.length);
+        }
+        fill(board, i, j, option);
+    }
+
     public void fill(int[][] board, int i, int j, int orientation){
         int firstItem = -1;
         for (int k = 0; k < orientations[orientation][0].length; k++) {

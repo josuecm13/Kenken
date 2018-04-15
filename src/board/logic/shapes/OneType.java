@@ -6,7 +6,7 @@ public class OneType extends Shape {
 
     public OneType(){
         operations = new ArrayList<>();
-        orientations = new int[1][1][1];
+        orientations = new int[][][]{{{1}}};
         ID = ShapeTypeID.ONETYPE;
     }
 

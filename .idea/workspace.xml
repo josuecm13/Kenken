@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac59dacd-d559-4b24-81a3-20ecd6dba377" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/board/logic/shapes/ShapeFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Itype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Itype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Jtype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Jtype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Ltype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Ltype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/OneType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/OneType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Otype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Otype.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Stype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Stype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Ttype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Ttype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/TwoType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/TwoType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/logic/shapes/Ztype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/logic/shapes/Ztype.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +21,22 @@
       <file leaf-file-name="Shape.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Shape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="408">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#652#653#0" expanded="true" />
+                <element signature="e#675#676#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Operation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/board/logic/board/Operation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -46,11 +50,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ztype.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ztype.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Ztype.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KenkenBoard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShapeFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/ShapeFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -64,29 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OneType.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OneType.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/OneType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ltype.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Ltype.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Itype.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Itype.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+              <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -105,15 +112,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jtype.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Jtype.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -138,17 +136,18 @@
         <option value="$PROJECT_DIR$/src/board/shapes/Shape.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Operation.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Twotype.java" />
-        <option value="$PROJECT_DIR$/src/board/logic/shapes/Shape.java" />
-        <option value="$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Itype.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Jtype.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Ltype.java" />
-        <option value="$PROJECT_DIR$/src/board/logic/shapes/OneType.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Otype.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Stype.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Ttype.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/TwoType.java" />
         <option value="$PROJECT_DIR$/src/board/logic/shapes/Ztype.java" />
+        <option value="$PROJECT_DIR$/src/board/logic/shapes/ShapeFactory.java" />
+        <option value="$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java" />
+        <option value="$PROJECT_DIR$/src/board/logic/shapes/Shape.java" />
+        <option value="$PROJECT_DIR$/src/board/logic/shapes/OneType.java" />
       </list>
     </option>
   </component>
@@ -327,6 +326,8 @@
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -415,30 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/board/logic/board/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Itype.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -457,13 +434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/OneType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -499,6 +469,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/ShapeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/board/logic/board/Operation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/board/logic/board/KenkenBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/board/logic/shapes/OneType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>
