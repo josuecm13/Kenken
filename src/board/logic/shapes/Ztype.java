@@ -8,6 +8,7 @@ public class Ztype extends Shape {
         operations = new ArrayList<>();
         orientations = new int[1][1][1];
         orientations = new int[2][3][3];
+        ID = ShapeTypeID.ZTYPE;
         int s0[][] = {  {1,1,0},
                         {0,1,1},
                         {0,0,0}};
@@ -18,13 +19,4 @@ public class Ztype extends Shape {
         orientations[1] = s1;
     }
 
-    @Override
-    public void fill(int[][] board, int i, int j, int orientation) {
-
-    }
-
-    @Override
-    public boolean fits(int[][] board, int i, int j, int orientation) {
-        return false;
-    }
 }

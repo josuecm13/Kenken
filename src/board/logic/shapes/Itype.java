@@ -7,6 +7,7 @@ public class Itype extends Shape {
     public Itype(){
         operations = new ArrayList<>();
         orientations = new int[2][4][4];
+        ID = ShapeTypeID.ITYPE;
         int vert[][] = {{1,0,0,0},
                         {1,0,0,0},
                         {1,0,0,0},
@@ -19,14 +20,4 @@ public class Itype extends Shape {
         orientations[1] = hor;
     }
 
-
-    @Override
-    public void fill(int[][] board, int i, int j, int orientation) {
-
-    }
-
-    @Override
-    public boolean fits(int[][] board, int i, int j, int orientation) {
-        return false;
-    }
 }

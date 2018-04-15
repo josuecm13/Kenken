@@ -7,6 +7,7 @@ public class Ltype extends Shape {
     public Ltype(){
         operations = new ArrayList<>();
         orientations = new int[4][3][3];
+        ID = ShapeTypeID.LTYPE;
         int[][] l0 = {{1, 0, 0},
                 {1, 0, 0},
                 {1, 1, 0}};
@@ -25,13 +26,4 @@ public class Ltype extends Shape {
         orientations[3] = l3;
     }
 
-    @Override
-    public void fill(int[][] board, int i, int j, int orientation) {
-
-    }
-
-    @Override
-    public boolean fits(int[][] board, int i, int j, int orientation) {
-        return false;
-    }
 }

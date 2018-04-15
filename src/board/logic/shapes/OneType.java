@@ -7,15 +7,7 @@ public class OneType extends Shape {
     public OneType(){
         operations = new ArrayList<>();
         orientations = new int[1][1][1];
+        ID = ShapeTypeID.ONETYPE;
     }
 
-    @Override
-    public void fill(int[][] board, int i, int j, int orientation) {
-
-    }
-
-    @Override
-    public boolean fits(int[][] board, int i, int j, int orientation) {
-        return false;
-    }
 }

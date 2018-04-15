@@ -8,6 +8,7 @@ public class Ttype extends Shape {
     public Ttype(){
         operations = new ArrayList<>();
         orientations = new int[4][3][3];
+        ID = ShapeTypeID.TTYPE;
         int t0[][] = {  {1,1,1},
                         {0,1,0},
                         {0,0,0}};
@@ -26,13 +27,5 @@ public class Ttype extends Shape {
         orientations[3] = t3;
     }
 
-    @Override
-    public void fill(int[][] board, int i, int j, int orientation) {
 
-    }
-
-    @Override
-    public boolean fits(int[][] board, int i, int j, int orientation) {
-        return false;
-    }
 }
