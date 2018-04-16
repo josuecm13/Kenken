@@ -1,7 +1,7 @@
-package board.logic.shapes;
+package gameboard.logic.shapes;
 
 
-import board.logic.board.Operation;
+import gameboard.logic.board.Operation;
 
 import java.util.List;
 import java.util.Random;
@@ -11,11 +11,12 @@ public abstract class Shape {
     public int[][][] orientations;
     public List<Operation> operations;
     public int[] number;
+    public int[] head = new int[2];
     protected Operation operation;
-    protected int result;
+    protected int objective;
     protected ShapeTypeID ID;
 
-    public boolean fits(int[][] board, int i, int j){
+    public boolean fits(Shape[][] board, int i, int j){
         for (int k = 0; k < orientations.length ; k++) {
             if (fits(board, i, j,k))
                 return true;
@@ -23,21 +24,24 @@ public abstract class Shape {
         return false;
     }
 
+
     public static int getCount(){
         return 9;
     }
 
-    public void placeShape(int board[][], int i, int j){
+    public void placeShape(Shape shapeBoard[][],int i, int j){
         Random rand = new Random();
-        int option = rand.nextInt(orientations.length);
-        while (!fits(board, i, j, option)){
-            option = rand.nextInt(orientations.length);
+        int orientation = rand.nextInt(orientations.length);
+        while (!fits(shapeBoard, i, j, orientation)){
+            orientation = rand.nextInt(orientations.length);
         }
-        fill(board, i, j, option);
+        fill(shapeBoard, i, j, orientation);
     }
 
-    public void fill(int[][] board, int i, int j, int orientation){
+    private void fill(Shape[][] shapeBoard, int i, int j, int orientation){
         int firstItem = -1;
+        head[0] = i;
+        head[1] = j;
         for (int k = 0; k < orientations[orientation][0].length; k++) {
             if(orientations[orientation][0][k] == 1) {
                 firstItem = k;
@@ -47,13 +51,13 @@ public abstract class Shape {
         for(int n = 0; n < orientations[orientation].length; n++){
             for (int m = 0; m < orientations[orientation][0].length; m++) {
                 if(orientations[orientation][n][m] == 1) {
-                    board[i+n][j+m-firstItem] = ID.ordinal();
+                    shapeBoard[i+n][j+m-firstItem] = this;
                 }
             }
         }
     }
 
-    public boolean fits(int[][] board, int i,int j, int orientation){
+    private boolean fits(Shape[][] shapeBoard, int i, int j, int orientation){
         if(i == j && i == 0 && orientations[orientation][0][0] == 0){
             return false;
         }
@@ -68,7 +72,7 @@ public abstract class Shape {
             for (int m = 0; m < orientations[orientation][0].length; m++) {
                 if(orientations[orientation][n][m] == 1) {
                     try {
-                        if (board[i + n][j + m - firstItem] != -1) {
+                        if (shapeBoard[i + n][j + m - firstItem] != null) {
                             return false;
                         }
                     } catch (IndexOutOfBoundsException e) {
@@ -79,5 +83,23 @@ public abstract class Shape {
         }
         return true;
     }
+
+    public boolean isHead(int i , int j){
+        return (head[0] == i && head[1] == j);
+    }
+
+    public int getObjective(){
+        Random r = new Random();
+        return (objective== 0 ? r.nextInt(30) : objective);
+    }
+
+    public String getOperation(){
+        Random r = new Random();
+        String[] ops = {"+","-","x","/","%"};
+        return ops[r.nextInt(ops.length)];
+    }
+
+    public abstract String toString();
+
 
 }

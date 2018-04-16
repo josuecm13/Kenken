@@ -1,4 +1,4 @@
-package board.logic.shapes;
+package gameboard.logic.shapes;
 
 import java.util.Random;
 
@@ -14,7 +14,7 @@ public class ShapeFactory {
             case 1:
                 return new Ztype();
             case 2:
-                return new OneType();
+                return new Ltype();
             case 3:
                 return new Otype();
             case 4:
@@ -25,10 +25,8 @@ public class ShapeFactory {
                 return new Ttype();
             case 7:
                 return new TwoType();
-            case 8:
-                return new Ltype();
             default:
-                return null;
+                return new OneType();
         }
     }
 

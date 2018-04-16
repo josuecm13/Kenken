@@ -1,4 +1,4 @@
-package board.logic.shapes;
+package gameboard.logic.shapes;
 
 import java.util.ArrayList;
 
@@ -14,6 +14,11 @@ public class TwoType extends Shape {
         int hor[][] =  {{1,1},
                         {0,0}};
         orientations[1] = hor;
+    }
+
+    @Override
+    public String toString() {
+        return "2";
     }
 
 }

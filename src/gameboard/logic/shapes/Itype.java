@@ -1,4 +1,4 @@
-package board.logic.shapes;
+package gameboard.logic.shapes;
 
 import java.util.ArrayList;
 
@@ -20,4 +20,9 @@ public class Itype extends Shape {
         orientations[1] = hor;
     }
 
+
+    @Override
+    public String toString() {
+        return "I";
+    }
 }

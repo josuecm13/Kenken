@@ -1,4 +1,4 @@
-package board.logic.shapes;
+package gameboard.logic.shapes;
 
 import java.util.ArrayList;
 
@@ -11,6 +11,11 @@ public class Otype extends Shape {
         int o[][] = {   {1,1},
                         {1,1}};
         orientations[0] = o;
+    }
+
+    @Override
+    public String toString() {
+        return "O";
     }
 
 }
