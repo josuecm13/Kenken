@@ -1,8 +1,9 @@
 package backtrack;
 
-import board.logic.board.Operation;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by ${gaboq} on 15/4/2018.
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 
 public class Solver {
 
-    private final ArrayList<Integer> NUMBERS = new ArrayList<>();
+    private final Tree NUMBERS;
 
     public Solver(int lendth) {
-
+        NUMBERS = new Tree();
         numbersArray(lendth);
 
     }
@@ -30,25 +31,30 @@ public class Solver {
         }
     }
 
-    private ArrayList<Integer> sum(int target) {
-
-        return sum_recursive(NUMBERS, target);
+    private void sum(int target, int length) {
+        sum_recursive(NUMBERS.root, target, length);
     }
 
-    private ArrayList<Integer> sum_recursive(ArrayList<Integer> root, int target) {
+    private void sum_recursive(Node node, int target, int length) {
+        if (node != null) {
+            int val = node.value;
+            if (val > target) {
+                node.visited = true;
+                sum_recursive(node.left, target, length);
+            } else {
 
-    }
-
-    private ArrayList<Integer> solve(int op) {
-        return sum(10);
+            }
+        }
     }
 
 
     public static void main(String[] args) {
-
         Solver solution = new Solver(7);
-        System.out.println(solution.solve(1));
+        solution.NUMBERS.dfs(solution.NUMBERS.root);
 
+        System.out.println();
+        solution.sum(10, 2);
     }
+
 
 }
