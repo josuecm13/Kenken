@@ -6,6 +6,7 @@ public class Ttype extends Shape {
 
 
     public Ttype(){
+        LENGHT = 4;
         operations = new ArrayList<>();
         orientations = new int[4][3][3];
         ID = ShapeTypeID.TTYPE;

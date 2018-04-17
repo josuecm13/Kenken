@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class TwoType extends Shape {
 
     public TwoType(){
+        LENGHT = 2;
         operations = new ArrayList<>();
         orientations = new int[2][2][2];
         ID = ShapeTypeID.TWOTYPE;

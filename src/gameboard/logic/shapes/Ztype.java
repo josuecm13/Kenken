@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Ztype extends Shape {
 
     public Ztype(){
+        LENGHT = 4;
         operations = new ArrayList<>();
         orientations = new int[1][1][1];
         orientations = new int[2][3][3];

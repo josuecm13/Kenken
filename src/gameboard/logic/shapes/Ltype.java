@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Ltype extends Shape {
 
     public Ltype(){
-        operations = new ArrayList<>();
+        LENGHT = 4;
+        operations = new ArrayList<> ( ) ;
         orientations = new int[4][3][3];
         ID = ShapeTypeID.LTYPE;
         int[][] l0 = {{1, 0, 0},

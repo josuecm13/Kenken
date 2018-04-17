@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Itype extends Shape {
 
     public Itype(){
+        LENGHT = 4;
         operations = new ArrayList<>();
         orientations = new int[2][4][4];
         ID = ShapeTypeID.ITYPE;

@@ -10,6 +10,7 @@ public abstract class Shape {
     public enum ShapeTypeID {LTYPE,JTYPE,OTYPE,ITYPE,TTYPE,STYPE,ZTYPE,TWOTYPE,ONETYPE}
     public int[][][] orientations;
     public List<Operation> operations;
+    public int LENGHT;
     public int[] number;
     public int[] head = new int[2];
     protected Operation operation;

@@ -18,7 +18,7 @@ public class KenkenFrame extends JFrame {
         windowPanel.setLayout(new FlowLayout());
         windowPanel.setPreferredSize(new Dimension(800,600));
 
-        kPanel = new KenkenPanel(new KenkenBoard(5,5));
+        kPanel = new KenkenPanel(new KenkenBoard(10,10));
 
         windowPanel.add(kPanel);
         this.add(windowPanel);
