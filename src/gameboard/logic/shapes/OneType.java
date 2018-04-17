@@ -6,10 +6,9 @@ import java.util.Random;
 public class OneType extends Shape {
 
     public OneType(){
-        LENGHT = 1;
-        operations = new ArrayList<>();
-        orientations = new int[][][]{{{1}}};
         ID = ShapeTypeID.ONETYPE;
+        orientations = ID.getOrientations();
+        operation = ID.getOperation();
     }
 
     @Override

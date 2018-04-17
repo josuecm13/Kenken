@@ -1,7 +1,17 @@
 package gameboard.logic.board;
 
-public class Operation {
+public enum Operation {
+    ADD("+"),SUB("-"),DIV("÷"),MOD("%"),EXP("^"),MUL("x");
 
-    public enum OP{ADD,SUB,DIV,MOD,EXP}
+    private final String symbol;
 
+
+    Operation(String symbol){
+        this.symbol = symbol;
+    }
+
+
+    public String getSymbol() {
+        return symbol;
+    }
 }

@@ -7,12 +7,81 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class Shape {
-    public enum ShapeTypeID {LTYPE,JTYPE,OTYPE,ITYPE,TTYPE,STYPE,ZTYPE,TWOTYPE,ONETYPE}
+    public enum ShapeTypeID {
+        LTYPE(  new int[][][]{{{1, 0, 0}, {1, 0, 0}, {1, 1, 0}},
+                {{1, 1, 1}, {1, 0, 0}, {0, 0, 0}},
+                {{1, 1, 0}, {0, 1, 0}, {0, 1, 0}},
+                {{0, 0, 1}, {1, 1, 1}, {0, 0, 0}}},
+                4, new int[][]{{0,3},{0,2}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+
+        JTYPE(   new int[][][]{{{0, 1, 0}, {0, 1, 0}, {1, 1, 0}},
+                {{1, 0, 0}, {1, 1, 1}, {0, 0, 0}},
+                {{1, 1, 0}, {1, 0, 0}, {1, 0, 0}},
+                {{1, 1, 1}, {0, 0, 1}, {0, 0, 0}}},
+                4, new int[][]{{0, 3}, {1, 3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+
+        OTYPE(  new int[][][]{{{1, 1}, {1, 1}}},
+                4,new int[][] {{0, 3}, {1, 2}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+
+        ITYPE(  new int[][][]{{{1, 0, 0, 0}, {1, 0, 0, 0}, {1, 0, 0, 0}, {1, 0, 0, 0}},
+                {{1, 1, 1, 1},{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}},
+                4,new int[0][0],new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+
+        TTYPE(  new int[][][]{{{1, 1, 1}, {0, 1, 0}, {0, 0, 0}},
+                {{0, 1, 0}, {1, 1, 0}, {0, 1, 0}},
+                {{0, 1, 0}, {1, 1, 1}, {0, 0, 0}},
+                {{1, 0, 0}, {1, 1, 0}, {1, 0, 0}}},
+                4,new int[][]{},new Operation[]{Operation.ADD,Operation.MUL}),
+
+        STYPE(  new int[][][]{{{0,1,1}, {1,1,0}, {0,0,0}},
+                {{1, 0, 0}, {1, 1, 0}, {0, 1, 0}},
+                },
+                4, new int[][]{{0,2}, {0,3}, {1,3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+
+        ZTYPE(  new int[][][]{{{1, 1, 0}, {0, 1, 1}, {0, 0, 0}},
+                {{0, 1, 0}, {1, 1, 0}, {1, 0, 0}}},
+                4, new int[][]{{0, 2}, {0, 3}, {1, 3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+
+        TWOTYPE(new int[][][]{{{1, 0}, {1, 0}},
+                {{1, 1}, {0, 0}}},
+                4, new int[0][0],new Operation[]{Operation.DIV,Operation.ADD,Operation.MUL,Operation.MOD,Operation.SUB}),
+
+        ONETYPE(    new int[][][]{{{1}}},
+                4, new int[0][0],new Operation[]{Operation.EXP});
+
+        private final int[][][] orientations;
+        private final int length;
+        private final int[][] valid_combination;
+        private final Operation[] op;
+
+        ShapeTypeID(int[][][] orientations, int length, int[][] valid_combination, Operation[] operations) {
+            this.orientations = orientations;
+            this.length = length;
+            this.valid_combination = valid_combination;
+            this.op = operations;
+        }
+
+        public int getLength() {
+            return length;
+        }
+
+        public int[][][] getOrientations() {
+            return orientations;
+        }
+
+        public int[][] getValid_combination() {
+            return valid_combination;
+        }
+
+        public Operation getOperation(){
+            Random r = new Random();
+            return op[r.nextInt(op.length)];
+        }
+
+    }
     public int[][][] orientations;
-    public List<Operation> operations;
-    public int LENGHT;
     public int[] number;
-    public int[] head = new int[2];
+    private int[] head = new int[2];
     protected Operation operation;
     protected int objective;
     protected ShapeTypeID ID;
@@ -95,9 +164,7 @@ public abstract class Shape {
     }
 
     public String getOperation(){
-        Random r = new Random();
-        String[] ops = {"+","-","x","/","%"};
-        return ops[r.nextInt(ops.length)];
+        return operation.getSymbol();
     }
 
     public abstract String toString();
