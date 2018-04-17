@@ -31,30 +31,13 @@ public class Solver {
         }
     }
 
-    private void sum(int target, int length) {
-        sum_recursive(NUMBERS.root, target, length);
-    }
-
-    private void sum_recursive(Node node, int target, int length) {
-        if (node != null) {
-            int val = node.value;
-            if (val > target) {
-                node.visited = true;
-                sum_recursive(node.left, target, length);
-            } else {
-
-            }
-        }
-    }
-
-
+    /*
     public static void main(String[] args) {
         Solver solution = new Solver(7);
         solution.NUMBERS.dfs(solution.NUMBERS.root);
-
         System.out.println();
-        solution.sum(10, 2);
     }
+    */
 
 
 }
