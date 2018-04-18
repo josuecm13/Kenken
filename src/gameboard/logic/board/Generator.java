@@ -55,6 +55,7 @@ public class Generator {
         for (int i = 0; i < shapeTypeID.getLength(); i++) {
             int operand = r.nextInt();
         }
+        return 0;
     }
 
 }
