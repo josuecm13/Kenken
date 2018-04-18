@@ -3,12 +3,13 @@ package gameboard.logic.board;
 import gameboard.logic.shapes.Shape;
 import gameboard.logic.shapes.ShapeFactory;
 
+import java.awt.*;
+
 
 public class KenkenBoard {
 
     private int board[][];
     private Shape shapeboard[][];
-    private final char temp[] = {'L','J','O','I','T','S','Z','2','1'};
     private final int COLUMNS;
     private final int ROWS;
 
@@ -36,9 +37,9 @@ public class KenkenBoard {
             for (int j = 0; j < COLUMNS; j++) {
                 if (shapeboard[i][j] != null)
                     continue;
-                Shape shape = ShapeFactory.getInstance();
+                Shape shape = ShapeFactory.getInstance(ROWS);
                 while(!shape.fits(shapeboard,i,j))
-                    shape = ShapeFactory.getInstance();
+                    shape = ShapeFactory.getInstance(ROWS);
                 shape.placeShape(shapeboard, i, j);
             }
         }
