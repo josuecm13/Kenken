@@ -1,14 +1,16 @@
 package gameboard.logic.shapes;
 
-import java.util.ArrayList;
+import gameboard.logic.board.Generator;
 
 public class Ttype extends Shape {
 
 
-    public Ttype(){
+    public Ttype(int range){
+        this.range = range;
         ID = ShapeTypeID.TTYPE;
         orientations = ID.getOrientations();
         operation = ID.getOperation();
+        objective = Generator.generateResult(ID, operation,range);
     }
 
 

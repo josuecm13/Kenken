@@ -52,7 +52,7 @@ public class KenkenPanel extends JPanel {
         g2d.fillRect(0, 0,usedWidth,usedHeight);
         int i = 0;
         int j = 0;
-        Shape temp = ShapeFactory.getInstance();
+        Shape temp = ShapeFactory.getInstance(2);
 
         g2d.setColor(new Color(0.9f,0.9f,0.9f));
         for(int x = 0;x <= usedWidth;x+=slotWidth) {
@@ -70,7 +70,7 @@ public class KenkenPanel extends JPanel {
                     temp = board.getShapeboard()[i][j];
                     if(temp.isHead(i,j)){
                         g2d.setFont(new Font(Font.MONOSPACED,Font.BOLD,16));
-                        g2d.drawString(""+temp.getObjective()+temp.getOperation(),x+10,y+16);
+                        g2d.drawString(""+temp.getObjective()+temp.getOperation().getSymbol(),x+10,y+16);
                     }
                     g2d.setStroke(new BasicStroke(4));
                     g2d.drawLine(x,y,x,y+slotHeight);
