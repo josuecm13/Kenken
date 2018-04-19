@@ -10,8 +10,8 @@ public abstract class Shape {
     public int[] number;
     private int[] head = new int[2];
     protected Operation operation;
-    private int objective;
-    private ShapeTypeID ID;
+    protected int objective;
+    protected ShapeTypeID ID;
     int range;
 
     public boolean fits(Shape[][] board, int i, int j){

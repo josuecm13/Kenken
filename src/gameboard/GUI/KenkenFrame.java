@@ -8,8 +8,11 @@ import java.awt.*;
 public class KenkenFrame extends JFrame {
 
     private KenkenPanel kPanel;
+    private JButton generatorButton;
 
     public KenkenFrame(){
+
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("KenKen");
         this.setResizable(false);
@@ -29,8 +32,14 @@ public class KenkenFrame extends JFrame {
         this.setJMenuBar(menuBar);
         */
 
-        JButton saveButton = new JButton("Save Kenken");
+        generatorButton = new JButton("New Table");
+        generatorButton.addActionListener( e -> {
+            try{
+                new TableFrame();
+            }catch (Exception ignored){
 
+            }
+        });
 
 
         JPanel windowPanel = new JPanel();
@@ -40,6 +49,7 @@ public class KenkenFrame extends JFrame {
         kPanel = new KenkenPanel(new KenkenBoard(7,7));
 
         windowPanel.add(kPanel);
+        windowPanel.add(generatorButton);
         this.add(windowPanel);
 
     }
