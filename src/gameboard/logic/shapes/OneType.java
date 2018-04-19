@@ -1,6 +1,7 @@
 package gameboard.logic.shapes;
 
 import gameboard.logic.board.Generator;
+import gameboard.logic.board.Operation;
 
 import java.util.Random;
 
@@ -22,8 +23,7 @@ public class OneType extends Shape {
 
     @Override
     public int getObjective(){
-        Random r = new Random();
-        return (int) Math.pow(2,r.nextInt(5));
+        return objective;
     }
 
 }

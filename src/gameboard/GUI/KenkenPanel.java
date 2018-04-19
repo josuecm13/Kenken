@@ -22,7 +22,7 @@ public class KenkenPanel extends JPanel {
         fontSize=23;
     }
 
-    public KenkenPanel(KenkenBoard board){
+    KenkenPanel(KenkenBoard board){
         this.setPreferredSize(new Dimension(550, 550));
         this.board = board;
         usedWidth = 0;
@@ -34,7 +34,7 @@ public class KenkenPanel extends JPanel {
         this.board = board;
     }
 
-    public void setFontSize(int fontSize){
+    void setFontSize(int fontSize){
         this.fontSize = fontSize;
     }
 
