@@ -101,12 +101,11 @@ public class Solver {
             for (int j = 0; j < mat[0].length; j++) {
 
                 Shape aux = mat[i][j];
-                String op = aux.getID().getOperation().getSymbol();
+                String op = aux.getOperation().getSymbol();
                 int length = aux.getID().getLength();
                 int target = aux.getObjective();
 
-                //str += (aux.getID().toString() + op + "   ");
-                str += (aux.getClass().toString() +  "    ");
+                str += (aux + op + "   ");
 
                 switch (op) {
                     case "+":
