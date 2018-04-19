@@ -7,9 +7,10 @@ import java.util.Random;
 public class Generator {
 
     public static int generateResult(Shape.ShapeTypeID shape, Operation operation, int range){
-        int[] array = generateRandomArray(range,shape.getLength());
-        while (!isValid(array, shape.getValid_combination()))
-            array = generateRandomArray(range,shape.getLength());
+        int[] array = generateRandomArray(range,shape.getLength(),operation);
+        int attempts = 1000;
+        while (!isValid(array, shape.getValid_combination()) && attempts-- > 0)
+            array = generateRandomArray(range,shape.getLength(),operation);
         switch (operation){
             case ADD:
                 return sum(array);
@@ -26,6 +27,10 @@ public class Generator {
         }
     }
 
+    public static int calculateFontSize(int x){
+        return (int) (-0.64*x +21.09);
+    }
+
     private static int sum(int[] array){
         int result = 0;
         for (int i: array){
@@ -35,11 +40,11 @@ public class Generator {
     }
 
     private static int exp(int[] array) {
-        return (int) Math.pow(2,array[0]);
+        return (int) Math.pow(array[0],3);
     }
 
     private static int mul(int[] array) {
-        int result = 0;
+        int result = 1;
         for (int i: array){
             result *= i;
         }
@@ -59,22 +64,21 @@ public class Generator {
     }
 
     private static int div(int[] array){
-        return array[1] == 0 ? array[0] / 3:array[0] / array[1] ;
+        return array[1] == 0 ? array[0] / (array[0]+2) :array[0] / array[1] ;
     }
 
-    private static int[] range(int n){
-        int[] list = new int[n];
-        for (int i = 0; i < n ; i++) {
-            list[i] = i;
-        }
-        return list;
-    }
 
-    private static int[] generateRandomArray(int range, int length){
+    private static int[] generateRandomArray(int range, int length, Operation operation){
         Random r = new Random();
         int[] array = new int[length];
+        int[] possibilities = range(range);
         for (int i = 0; i < length; i++) {
             int element = r.nextInt(range);
+            element = possibilities[element];
+            while (operation == Operation.MUL && element == 0) {
+                element = r.nextInt(range);
+                element = possibilities[element];
+            }
             array[i] = element;
         }
         return  array;
@@ -91,7 +95,6 @@ public class Generator {
     }
 
     private static boolean in(int indexA,int indexB, int[][] valid){
-        boolean isValid = false;
         for (int[] e: valid) {
             if ((e[0] == indexA || e[0] == indexB) && (e[1] == indexA || e[1] == indexB))
                 return true;
@@ -117,6 +120,20 @@ public class Generator {
                 return true;
         }
         return false;
+    }
+
+    private static int[] range(int n){
+        int[] possibilities = new int[n];
+        int index = 10;
+        for (int i = 0; i < n; i++) {
+            if (i < 10) {
+                possibilities[i] = i+1;
+            } else {
+                possibilities[i] =  (i+1) - (index += 2);
+            }
+        }
+        return possibilities;
+
     }
 
 

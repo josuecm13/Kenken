@@ -8,6 +8,7 @@ import java.util.Random;
 public abstract class Shape {
     public int[][][] orientations;
     public int[] number;
+    int[][] coordinates;
     private int[] head = new int[2];
     protected Operation operation;
     protected int objective;
@@ -48,9 +49,11 @@ public abstract class Shape {
                 break;
             }
         }
+        int cont = 0;
         for(int n = 0; n < orientations[orientation].length; n++){
             for (int m = 0; m < orientations[orientation][0].length; m++) {
                 if(orientations[orientation][n][m] == 1) {
+                    coordinates[cont++]= new int[]{i+n,j+m-firstItem};
                     shapeBoard[i+n][j+m-firstItem] = this;
                 }
             }
@@ -130,9 +133,8 @@ public abstract class Shape {
                 {{1, 0, 0}, {1, 1, 0}, {1, 0, 0}}},
                 4,new int[][]{},new Operation[]{Operation.ADD,Operation.MUL}),
 
-        STYPE(  new int[][][]{{{0,1,1}, {1,1,0}, {0,0,0}},
-                {{1, 0, 0}, {1, 1, 0}, {0, 1, 0}},
-        },
+        STYPE(  new int[][][]{{ {0, 1, 1}, {1, 1, 0}, {0, 0, 0}},
+                                {{1, 0, 0},{1, 1, 0}, {0, 1, 0}}},
                 4, new int[][]{{0,2}, {0,3}, {1,3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
 
         ZTYPE(  new int[][][]{{{1, 1, 0}, {0, 1, 1}, {0, 0, 0}},

@@ -12,12 +12,8 @@ public class Main {
             public void run() {
                 KenkenFrame frame = new KenkenFrame();
                 frame.setVisible(true);
-                printBoard(frame.getkPanel().getBoard().getShapeboard());
-                System.out.println();
-                printBoard(frame.getkPanel().getBoard().getShapeboard());
             }
         });
-
     }
 
     public static void printBoard(Shape[][] board){
