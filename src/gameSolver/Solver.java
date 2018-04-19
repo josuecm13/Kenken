@@ -1,8 +1,8 @@
 package gameSolver;
 
+import gameSolver.Operations.Sum;
 import gameboard.logic.board.KenkenBoard;
 import gameboard.logic.shapes.Shape;
-import jdk.jshell.execution.Util;
 
 import java.util.*;
 
@@ -13,15 +13,22 @@ import java.util.*;
 public class Solver {
 
     private HashMap numbers;
+    private Sum add;
 
-    public Solver(int lendth) {
+    public Solver(int length) {
         numbers = new HashMap();
-        numbersMap(lendth);
+        numbersMap(length);
+        add = new Sum(numbers);
+    }
+
+    public Solver(KenkenBoard board, int length) {
+        numbers = new HashMap();
+        numbersMap(length);
 
     }
 
-    public Solver(KenkenBoard board) {
-
+    public HashMap getNumbers() {
+        return numbers;
     }
 
     private void numbersMap(int lendth) {
@@ -70,13 +77,58 @@ public class Solver {
         return result;
     }
 
+    private boolean contains(int num, int[] line) {
+        List<int[]> list = Arrays.asList(line);
+        if (list.contains(num)) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean validPlace(int row, int col, int[][] mat) {
+        int[] column = getColumn(mat, col);
+        int[] rows = mat[row];
+        if (!contains(mat[row][col], column) && !contains(mat[row][col], rows)) {
+            return true;
+        }
+        return false;
+    }
+
     public void solve(Shape[][] mat) {
+        String str;
         for (int i = 0; i < mat.length; i++) {
+            str = "";
             for (int j = 0; j < mat[0].length; j++) {
+
                 Shape aux = mat[i][j];
+                String op = aux.getID().getOperation().getSymbol();
+                int length = aux.getID().getLength();
+                int target = aux.getObjective();
+
+                //str += (aux.getID().toString() + op + "   ");
+                str += (aux.getClass().toString() +  "    ");
+
+                switch (op) {
+                    case "+":
+                        add.sum(target, length);
+                        break;
+                    case  "-":
+                        break;
+                    case "x":
+                        break;
+                    case "÷":
+                        break;
+                    case "^":
+                        break;
+                    case  "%":
+                        break;
+
+                }
 
             }
+            System.out.println(str);
         }
+        System.out.println();
     }
 
 

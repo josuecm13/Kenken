@@ -2,48 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac59dacd-d559-4b24-81a3-20ecd6dba377" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gameSolver/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameSolver/Solver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameSolver/Operations/Sum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/board/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/board/Generator.java" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/out/production/Kenken/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kenken/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameSolver/Solver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameSolver/Solver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/GUI/KenkenFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/GUI/KenkenFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/GUI/KenkenPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/GUI/KenkenPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/Generator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/KenkenBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/board/KenkenBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Itype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Itype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Jtype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Jtype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Ltype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Ltype.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/OneType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/OneType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Otype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Otype.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Shape$ShapeTypeID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Shape$ShapeTypeID.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/ShapeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/ShapeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Stype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Stype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Ttype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Ttype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/TwoType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/TwoType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Ztype.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kenken/gameboard/logic/shapes/Ztype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/GUI/KenkenFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/GUI/KenkenFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/board/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/board/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameSolver/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameSolver/Solver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameboard/logic/board/KenkenBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/board/KenkenBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Itype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Itype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Jtype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Jtype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Ltype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Ltype.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/OneType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/OneType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Otype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Otype.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/ShapeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/ShapeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Stype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Stype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Ttype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Ttype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/TwoType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/TwoType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameboard/logic/shapes/Ztype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameboard/logic/shapes/Ztype.java" afterDir="false" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,55 +34,37 @@
       <file leaf-file-name="Solver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gameSolver/Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="388">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-=======
-            <state relative-caret-position="154">
-              <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+            <state relative-caret-position="211">
+              <caret line="108" column="38" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#613#614#0" expanded="true" />
-                <element signature="e#5545#5546#0" expanded="true" />
-                <element signature="e#5582#5583#0" expanded="true" />
-                <element signature="e#5628#5629#0" expanded="true" />
-                <element signature="e#5671#5672#0" expanded="true" />
-                <element signature="e#5720#5721#0" expanded="true" />
-                <element signature="e#5768#5769#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="e#599#600#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KenkenPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java">
+      <file leaf-file-name="Sum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gameSolver/Operations/Sum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="235">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Otype.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Otype.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShapeFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/ShapeFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="289">
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,27 +72,17 @@
       <file leaf-file-name="Stype.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Stype.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ttype.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Ttype.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KenkenBoard.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KenkenBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gameboard/logic/board/KenkenBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
+            <state relative-caret-position="204">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,54 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ztype.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Ztype.java">
+      <file leaf-file-name="Shape.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="272">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="92">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-=======
-            <state relative-caret-position="242">
-              <caret line="11" column="66" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="66" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-=======
-      <file leaf-file-name="KenkenFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameboard/GUI/KenkenFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1344#1345#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
+                <element signature="e#589#590#0" expanded="true" />
+                <element signature="e#613#614#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameboard/logic/board/Generator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1513#1514#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -226,7 +140,6 @@
         <option value="$PROJECT_DIR$/src/board/GUI/KenkenPanel.java" />
         <option value="$PROJECT_DIR$/src/gameboard/logic/board/Operation.java" />
         <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/ShapeFactory.java" />
-        <option value="$PROJECT_DIR$/src/gameboard/logic/board/KenkenBoard.java" />
         <option value="$PROJECT_DIR$/src/gameboard/logic/board/Generator.java" />
         <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/Itype.java" />
         <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/Jtype.java" />
@@ -237,12 +150,13 @@
         <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/Ttype.java" />
         <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/TwoType.java" />
         <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/Ztype.java" />
+        <option value="$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/gameboard/GUI/KenkenFrame.java" />
-        <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/src/gameSolver/Graph.java" />
-        <option value="$PROJECT_DIR$/src/gameboard/logic/board/Generator.java" />
+        <option value="$PROJECT_DIR$/src/gameSolver/Operations/Sum.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/gameboard/logic/board/KenkenBoard.java" />
+        <option value="$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java" />
         <option value="$PROJECT_DIR$/src/gameSolver/Solver.java" />
       </list>
     </option>
@@ -253,21 +167,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="42" />
     <option name="y" value="-15" />
     <option name="width" value="1939" />
     <option name="height" value="1049" />
-=======
-        <option value="$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="1084" />
-    <option name="height" value="1038" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -277,10 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
-=======
-      <pane id="Scope" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
@@ -307,16 +207,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gameboard" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
-=======
-            </path>
-            <path>
-              <item name="Kenken" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kenken" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gameboard" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
             </path>
             <path>
               <item name="Kenken" type="b2602c69:ProjectViewProjectNode" />
@@ -337,7 +227,22 @@
               <item name="Kenken" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kenken" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gameboard" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="shapes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kenken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kenken" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gameSolver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kenken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kenken" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gameSolver" type="462c0819:PsiDirectoryNode" />
+              <item name="Operations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -433,90 +338,61 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15913000" />
+    <option name="totallyTimeSpent" value="28040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-<<<<<<< HEAD
-      <window_info anchor="right" id="Palette" order="11" />
-      <window_info anchor="bottom" id="TODO" order="14" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.32827586" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Palette" order="9" />
+      <window_info anchor="bottom" id="TODO" order="15" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32827586" />
+      <window_info anchor="right" id="Palette&#9;" order="11" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32930845" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32965517" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.4813793" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info id="Capture Tool" order="14" />
-      <window_info id="Designer" order="4" />
+      <window_info id="Capture Tool" order="9" />
+      <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.171875" />
       <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32965517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info id="UI Designer" order="5" />
+      <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.3986207" />
-      <window_info anchor="right" id="Palette" order="9" />
+      <window_info anchor="right" id="Palette" order="7" />
       <window_info id="Designer" order="10" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="17" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="18" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info id="Nl-Palette" order="8" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info id="Nl-Palette" order="14" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="bottom" id="TODO" order="14" />
       <window_info id="Favorites" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32965517" />
-      <window_info id="Image Layers" order="9" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32551724" />
+      <window_info id="Image Layers" order="8" />
       <window_info id="Capture Tool" order="13" />
-      <window_info anchor="right" id="Properties" order="10" />
+      <window_info anchor="right" id="Properties" order="15" />
       <window_info id="UI Designer" order="11" />
-      <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="13" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.50344825" />
-      <window_info anchor="right" id="Palette&#9;" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="15" />
-      <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="14" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19661458" />
-=======
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32965517" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.32551724" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19270833" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.2761506" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="2" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
+      <window_info anchor="right" id="Theme Preview" order="12" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.2761506" />
+      <window_info anchor="right" id="Palette&#9;" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="16" />
+      <window_info anchor="bottom" id="Event Log" order="17" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32965517" />
+      <window_info anchor="right" id="Maven Projects" order="13" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19270833" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,62 +403,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-<<<<<<< HEAD
-          <url>file://$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java</url>
-          <line>76</line>
-=======
-          <url>file://$PROJECT_DIR$/src/gameboard/logic/board/KenkenBoard.java</url>
-          <line>35</line>
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-<<<<<<< HEAD
-      <option name="time" value="20" />
+      <option name="time" value="24" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-=======
-      <option name="time" value="23" />
-    </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#5545#5546#0" expanded="true" />
-            <element signature="e#5582#5583#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5671#5672#0" expanded="true" />
-            <element signature="e#5720#5721#0" expanded="true" />
-            <element signature="e#5768#5769#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/board/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Itype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Jtype.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -645,8 +469,6 @@
           <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1344#1345#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -657,19 +479,8 @@
           <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-<<<<<<< HEAD
-            <element signature="e#5905#5906#0" expanded="true" />
-            <element signature="e#5949#5950#0" expanded="true" />
-=======
             <element signature="e#589#590#0" expanded="true" />
             <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#5545#5546#0" expanded="true" />
-            <element signature="e#5582#5583#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5671#5672#0" expanded="true" />
-            <element signature="e#5720#5721#0" expanded="true" />
-            <element signature="e#5768#5769#0" expanded="true" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
           </folding>
         </state>
       </provider>
@@ -746,19 +557,8 @@
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-<<<<<<< HEAD
-            <element signature="e#5905#5906#0" expanded="true" />
-            <element signature="e#5949#5950#0" expanded="true" />
-=======
             <element signature="e#589#590#0" expanded="true" />
             <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#5545#5546#0" expanded="true" />
-            <element signature="e#5582#5583#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5671#5672#0" expanded="true" />
-            <element signature="e#5720#5721#0" expanded="true" />
-            <element signature="e#5768#5769#0" expanded="true" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
           </folding>
         </state>
       </provider>
@@ -854,34 +654,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/ShapeFactory.java">
-=======
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/board/Operation.java">
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Itype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Jtype.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -927,43 +699,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Ttype.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="905" column="10" lean-forward="true" selection-start-line="905" selection-start-column="10" selection-end-line="905" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/ShapeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gameboard/logic/board/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="323">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
+            <element signature="e#1046#1047#0" expanded="true" />
             <element signature="e#1441#1442#0" expanded="true" />
             <element signature="e#1513#1514#0" expanded="true" />
+            <element signature="e#1555#1556#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Stype.java">
+    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Itype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/gameSolver/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/board/Generator.java">
+    <entry file="file://$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="237">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -972,104 +763,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#179#180#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/ShapeFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Ttype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameboard/GUI/KenkenFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="133">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1344#1345#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/gameboard/GUI/KenkenFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#5545#5546#0" expanded="true" />
-            <element signature="e#5582#5583#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#5671#5672#0" expanded="true" />
-            <element signature="e#5720#5721#0" expanded="true" />
-            <element signature="e#5768#5769#0" expanded="true" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameboard/GUI/KenkenPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5905#5906#0" expanded="true" />
-            <element signature="e#5949#5950#0" expanded="true" />
-=======
-        <state relative-caret-position="67">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="26" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gameboard/logic/board/KenkenBoard.java">
-<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="204">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1078,25 +788,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="289">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameSolver/Solver.java">
+    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Stype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-=======
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameSolver/Operations/Sum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
->>>>>>> 9b55546fd4cee7166754601ea8d3cd53e720af9f
+        <state relative-caret-position="235">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameboard/logic/shapes/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameSolver/Solver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="108" column="38" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
           </folding>
         </state>
       </provider>

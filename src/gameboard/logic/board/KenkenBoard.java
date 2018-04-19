@@ -1,5 +1,6 @@
 package gameboard.logic.board;
 
+import gameSolver.Solver;
 import gameboard.logic.shapes.Shape;
 import gameboard.logic.shapes.ShapeFactory;
 
@@ -18,6 +19,11 @@ public class KenkenBoard {
         this.ROWS = rows;
         initializeBoards();
         generateKenkenBoard();
+        /**/
+        Solver s = new Solver(ROWS);
+        s.solve(shapeboard);
+        s.solve(shapeboard);
+
     }
 
 
@@ -30,6 +36,7 @@ public class KenkenBoard {
             }
         }
     }
+
 
 
     private void generateKenkenBoard(){

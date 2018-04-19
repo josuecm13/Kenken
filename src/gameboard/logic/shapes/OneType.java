@@ -21,11 +21,6 @@ public class OneType extends Shape {
     }
 
     @Override
-    public String getOperation(){
-        return "^";
-    }
-
-    @Override
     public int getObjective(){
         Random r = new Random();
         return (int) Math.pow(2,r.nextInt(5));
