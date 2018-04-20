@@ -1,5 +1,6 @@
 package gameboard.GUI;
 
+import com.thoughtworks.xstream.XStream;
 import gameboard.logic.board.Generator;
 import gameboard.logic.board.KenkenBoard;
 
@@ -55,12 +56,19 @@ public class KenkenFrame extends JFrame {
         }});
 
         JButton saveTable = new JButton("Save Table");
-        saveTable.addActionListener(e -> System.out.println("Jeje"));
+        saveTable.addActionListener(e -> {
+            try{
+                XStream xStream = new XStream();
+            }catch (Exception ignored){
+
+            }
+                }
+        );
         JButton openTable = new JButton("Load Table");
         openTable.addActionListener(e -> {
             try{
                 FileDialog fd = new FileDialog(this, "Choose a file", FileDialog.LOAD);
-                fd.setDirectory("C:\\Tables");
+                fd.setDirectory("..\\Tables");
                 fd.setFile("*.xml");
                 fd.setVisible(true);
                 String filename = fd.getFile();
