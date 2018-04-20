@@ -1,3 +1,4 @@
+import gameSolver.Solver;
 import gameboard.GUI.KenkenFrame;
 import gameboard.logic.shapes.Shape;
 
@@ -10,6 +11,7 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+
                 KenkenFrame frame = new KenkenFrame();
                 frame.setVisible(true);
             }
