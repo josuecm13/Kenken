@@ -28,26 +28,32 @@ public class Solver {
         return numbers;
     }
 
-    private void numbersMap(int lendth) {
-        int indice = 10;
-        ArrayList<Integer> numArray = new ArrayList<>();
-        for (int i = 0; i < lendth; i++) {
-            if (i < 10) {
-                numArray.add((i));
-            } else {
-                numArray.add((i+1) - (indice += 2));
-            }
-        }
+    private void numbersMap(int length) {
+        ArrayList<Integer> numArray = generateNumbers(length);
         int index = 10;
-        for (int i = 0; i < lendth; i++) {
+        for (int i = 0; i < length; i++) {
             ArrayList<Integer> aux = (ArrayList<Integer>) numArray.clone();
             aux.remove(i);
             if (i < 10) {
                 numbers.put((i), aux);
             } else {
-                numbers.put((i+1) - (index += 2), aux);
+                numbers.put((i) - (index += 1), aux);
             }
         }
+    }
+
+    private ArrayList<Integer> generateNumbers(int length) {
+        int indice = 10;
+        ArrayList<Integer> numArray = new ArrayList<>();
+        for (int i = 1; i < length+1; i++) {
+            if (i < 10) {
+                numArray.add((i));
+            } else {
+                numArray.add((i) - (indice));
+                indice += 2;
+            }
+        }
+        return numArray;
     }
 
     public void dislay() {
@@ -103,6 +109,7 @@ public class Solver {
                     e.exp(target);
                     continue;
                 }
+
                 switch (op) {
                     case "+":
                         Addition a = new Addition(numbers);
@@ -117,12 +124,16 @@ public class Solver {
                         mu.mul(target, 2);
                         break;
                     case "÷":
+
                         break;
                     case  "%":
                         Module m = new Module(numbers);
                         m.mod(target);
                         break;
                 }
+
+                Operate operat;
+
             }
         }
     }

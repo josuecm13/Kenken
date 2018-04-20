@@ -14,6 +14,8 @@ public class Main {
 
                 KenkenFrame frame = new KenkenFrame();
                 frame.setVisible(true);
+                Solver s = new Solver(19);
+                s.getNumbers();
             }
         });
     }
