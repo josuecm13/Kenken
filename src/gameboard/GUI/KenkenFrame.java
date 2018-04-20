@@ -48,6 +48,7 @@ public class KenkenFrame extends JFrame {
 
         kPanel = new KenkenPanel(new KenkenBoard(7,7));
 
+
         windowPanel.add(kPanel);
         windowPanel.add(generatorButton);
         this.add(windowPanel);

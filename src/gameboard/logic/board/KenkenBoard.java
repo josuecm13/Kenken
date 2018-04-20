@@ -22,7 +22,6 @@ public class KenkenBoard {
         /**/
         Solver s = new Solver(ROWS);
         s.solve(shapeboard);
-        s.solve(shapeboard);
 
     }
 

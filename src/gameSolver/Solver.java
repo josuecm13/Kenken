@@ -1,6 +1,5 @@
 package gameSolver;
 
-import gameSolver.Operations.Sum;
 import gameboard.logic.board.KenkenBoard;
 import gameboard.logic.shapes.Shape;
 
@@ -13,12 +12,10 @@ import java.util.*;
 public class Solver {
 
     private HashMap numbers;
-    private Sum add;
 
     public Solver(int length) {
         numbers = new HashMap();
         numbersMap(length);
-        add = new Sum(numbers);
     }
 
     public Solver(KenkenBoard board, int length) {
@@ -95,39 +92,39 @@ public class Solver {
     }
 
     public void solve(Shape[][] mat) {
-        String str;
         for (int i = 0; i < mat.length; i++) {
-            str = "";
             for (int j = 0; j < mat[0].length; j++) {
-
                 Shape aux = mat[i][j];
                 String op = aux.getOperation().getSymbol();
                 int length = aux.getID().getLength();
                 int target = aux.getObjective();
-
-                str += (aux + op + "   ");
-
+                if (op.equals("^")) {
+                    Exponent e = new Exponent(numbers);
+                    e.exp(target);
+                    continue;
+                }
                 switch (op) {
                     case "+":
-                        add.sum(target, length);
+                        Addition a = new Addition(numbers);
+                        a.sum(target, 3);
                         break;
                     case  "-":
+                        Subtraction s = new Subtraction(numbers);
+                        s.sub(target, 4);
                         break;
                     case "x":
+                        Multiplication mu = new Multiplication(numbers);
+                        mu.mul(target, 2);
                         break;
                     case "÷":
                         break;
-                    case "^":
-                        break;
                     case  "%":
+                        Module m = new Module(numbers);
+                        m.mod(target);
                         break;
-
                 }
-
             }
-            System.out.println(str);
         }
-        System.out.println();
     }
 
 
