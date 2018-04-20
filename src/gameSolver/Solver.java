@@ -20,7 +20,7 @@ public class Solver {
 
     public Solver(KenkenBoard board, int length) {
         numbers = new HashMap();
-        numbersMap(length);
+        numbersMap(4);
 
     }
 
@@ -117,7 +117,7 @@ public class Solver {
                         break;
                     case  "-":
                         Subtraction s = new Subtraction(numbers);
-                        s.sub(target, 4);
+                        s.sub(-7, 4);
                         break;
                     case "x":
                         Multiplication mu = new Multiplication(numbers);

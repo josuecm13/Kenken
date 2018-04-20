@@ -37,7 +37,7 @@ public class KenkenFrame extends JFrame {
         comboBox = new JComboBox<>();
         tf = new JTextField(20);
         comboBox = new JComboBox<>();
-        for (int i = 5; i <= 19 ; i++) {
+        for (int i = 1; i <= 25 ; i++) {
             comboBox.addItem(i);
         }
         comboBox.addActionListener(e -> tf.setText(Objects.requireNonNull(comboBox.getSelectedItem()).toString()));
@@ -74,7 +74,7 @@ public class KenkenFrame extends JFrame {
         openTable.addActionListener(e -> {
             try{
                 FileDialog fd = new FileDialog(this, "Choose a file", FileDialog.LOAD);
-                fd.setDirectory(this.getClass().getProtectionDomain().getCodeSource().getLocation().toString()+"\\Tables");
+                fd.setDirectory("\\Tables");
                 fd.setFile("*.xml");
                 fd.setVisible(true);
                 String filename = fd.getFile();
