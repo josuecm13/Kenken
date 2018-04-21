@@ -4,8 +4,6 @@ import gameSolver.Solver;
 import gameboard.logic.shapes.Shape;
 import gameboard.logic.shapes.ShapeFactory;
 
-import java.awt.*;
-
 
 public class KenkenBoard {
 
@@ -21,7 +19,7 @@ public class KenkenBoard {
         generateKenkenBoard();
 
         Solver s = new Solver(ROWS);
-        s.solve(shapeboard);
+        s.generatePermutations(shapeboard);
 
 
     }
