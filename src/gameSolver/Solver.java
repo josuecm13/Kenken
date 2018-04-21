@@ -12,10 +12,12 @@ import java.util.*;
 public class Solver {
 
     private HashMap numbers;
+    Operate permutation;
 
     public Solver(int length) {
         numbers = new HashMap();
         numbersMap(length);
+        permutation = new Operate(generateNumbers(length));
     }
 
     public Solver(KenkenBoard board, int length) {
@@ -34,24 +36,14 @@ public class Solver {
         for (int i = 0; i < length; i++) {
             ArrayList<Integer> aux = (ArrayList<Integer>) numArray.clone();
             aux.remove(i);
-            if (i < 10) {
                 numbers.put((i), aux);
-            } else {
-                numbers.put((i) - (index += 1), aux);
-            }
         }
     }
 
     private ArrayList<Integer> generateNumbers(int length) {
-        int indice = 10;
         ArrayList<Integer> numArray = new ArrayList<>();
-        for (int i = 1; i < length+1; i++) {
-            if (i < 10) {
-                numArray.add((i));
-            } else {
-                numArray.add((i) - (indice));
-                indice += 2;
-            }
+        for (int i = 0; i < length; i++) {
+            numArray.add((i));
         }
         return numArray;
     }
@@ -64,12 +56,6 @@ public class Solver {
             System.out.println(me.getValue());
         }
         System.out.println();
-    }
-
-    public ArrayList<Integer> permute(ArrayList<Integer> array) {
-        int removed = array.remove(0);
-        array.add(-1, removed);
-        return array;
     }
 
     private int[] getColumn(int[][] mat, int column) {
@@ -97,45 +83,34 @@ public class Solver {
         return false;
     }
 
-    public void solve(Shape[][] mat) {
+    public ArrayList<int[]> generatePermutations(Shape[][] mat) {
+        ArrayList<int[]> permutations = new ArrayList<>();
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat[0].length; j++) {
+
                 Shape aux = mat[i][j];
                 String op = aux.getOperation().getSymbol();
                 int length = aux.getID().getLength();
                 int target = aux.getObjective();
-                if (op.equals("^")) {
-                    Exponent e = new Exponent(numbers);
-                    e.exp(target);
-                    continue;
-                }
 
-                switch (op) {
-                    case "+":
-                        Addition a = new Addition(numbers);
-                        a.sum(target, 3);
+                switch (length) {
+                    case 1:
+                        permutations = permutation.permutateOne(target);
                         break;
-                    case  "-":
-                        Subtraction s = new Subtraction(numbers);
-                        s.sub(-7, 4);
+                    case 2:
+                        permutations = permutation.permutateTwo(op, target);
                         break;
-                    case "x":
-                        Multiplication mu = new Multiplication(numbers);
-                        mu.mul(target, 2);
+                    case  3:
+                        permutations = permutation.permutateThree(op, target);
                         break;
-                    case "÷":
-
-                        break;
-                    case  "%":
-                        Module m = new Module(numbers);
-                        m.mod(target);
+                    case 4:
+                        permutations = permutation.permutateFour(op, target);
                         break;
                 }
-
-                Operate operat;
 
             }
         }
+        return permutations;
     }
 
 

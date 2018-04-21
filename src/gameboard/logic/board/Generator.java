@@ -83,8 +83,7 @@ public class Generator {
         }
         return  array;
     }
-
-
+    
     private static boolean isValid(int[] array, int[][] valid){
         for (int i = 0; i < array.length; i++) {
             if(repeats(array[i], array, i)){
