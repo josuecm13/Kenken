@@ -19,7 +19,7 @@ public class KenkenPanel extends JPanel {
 
     public KenkenPanel(){
         this.setPreferredSize(new Dimension(650, 650));
-        this.board = new KenkenBoard(5,5);
+        this.board = new KenkenBoard(5,5,true);
         usedHeight=0;
         usedWidth=0;
         gapX = 10;
