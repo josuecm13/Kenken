@@ -28,7 +28,7 @@ public class Generator {
     }
 
     public static int calculateFontSize(int x){
-        return (int) (-0.64*x +21.09);
+        return (int) (-0.64*x +21.09) > 0 ? (int) (-0.64*x +21.09) : 1 ;
     }
 
     private static int sum(int[] array){
@@ -84,6 +84,7 @@ public class Generator {
         return  array;
     }
 
+
     private static boolean isValid(int[] array, int[][] valid){
         for (int i = 0; i < array.length; i++) {
             if(repeats(array[i], array, i)){
@@ -124,16 +125,16 @@ public class Generator {
 
     private static int[] range(int n){
         int[] possibilities = new int[n];
-        int index = 10;
         for (int i = 0; i < n; i++) {
-            if (i < 10) {
-                possibilities[i] = i+1;
-            } else {
-                possibilities[i] =  (i+1) - (index += 2);
-            }
+            possibilities[i] = i+1;
         }
         return possibilities;
+    }
 
+
+    public int[][] generateMatrix(){
+
+        return new int[][]{};
     }
 
 

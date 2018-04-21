@@ -106,7 +106,6 @@ public abstract class Shape {
     public abstract String toString();
 
 
-
     public enum ShapeTypeID {
         LTYPE(  new int[][][]{{{1, 0, 0}, {1, 0, 0}, {1, 1, 0}},
                 {{1, 1, 1}, {1, 0, 0}, {0, 0, 0}},

@@ -37,7 +37,7 @@ public class KenkenFrame extends JFrame {
         comboBox = new JComboBox<>();
         tf = new JTextField(20);
         comboBox = new JComboBox<>();
-        for (int i = 1; i <= 25 ; i++) {
+        for (int i = 5; i <= 19 ; i++) {
             comboBox.addItem(i);
         }
         comboBox.addActionListener(e -> tf.setText(Objects.requireNonNull(comboBox.getSelectedItem()).toString()));
