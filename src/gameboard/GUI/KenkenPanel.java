@@ -96,9 +96,15 @@ public class KenkenPanel extends JPanel {
             for (int x = 0; x <usedWidth; x+= slotWidth) {
                 if(board.getShapeboard()[i][j] != temp){
                     temp = board.getShapeboard()[i][j];
+                    /*
+                    Color c =g2d.getColor();
+                    g2d.setColor(temp.getColor());
+                    g2d.fillRect(x, y,x+usedWidth-10,y+usedHeight-10);
+                    g2d.setColor(c);
+                    */
                     if(temp.isHead(i,j)){
                         g2d.setFont(new Font(Font.MONOSPACED,Font.BOLD,fontSize));
-                        g2d.drawString(""+temp.getObjective()+temp.getOperation().getSymbol(),x+gapX,y+gapY);
+                        g2d.drawString(""+(temp.getObjective() >= 0 ? temp.getObjective(): "(" + temp.getObjective() + ")")  +temp.getOperation().getSymbol(),x+gapX,y+gapY);
                     }
                     g2d.setStroke(new BasicStroke(4));
                     g2d.drawLine(x,y,x,y+slotHeight);
