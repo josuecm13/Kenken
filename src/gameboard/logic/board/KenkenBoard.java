@@ -17,11 +17,6 @@ public class KenkenBoard {
         this.ROWS = rows;
         initializeBoards();
         generateKenkenBoard();
-
-        Solver s = new Solver(ROWS);
-        s.generatePermutations(shapeboard);
-
-
     }
 
 

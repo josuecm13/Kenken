@@ -48,15 +48,19 @@ public class Operate {
                         }
                         break;
                     case "÷":
-                        if (numArray.get(i) / numArray.get(j) == target) {
-                            int[] array = {numArray.get(i), numArray.get(j)};
-                            result.add(array);
+                        if (!(numArray.get(j) == 0)) {
+                            if (numArray.get(i) / numArray.get(j) == target) {
+                                int[] array = {numArray.get(i), numArray.get(j)};
+                                result.add(array);
+                            }
                         }
                         break;
                     case  "%":
-                        if (numArray.get(i) % numArray.get(j) == target) {
-                            int[] array = {numArray.get(i), numArray.get(j)};
-                            result.add(array);
+                        if (!(numArray.get(j) == 0)) {
+                            if (numArray.get(i) % numArray.get(j) == target) {
+                                int[] array = {numArray.get(i), numArray.get(j)};
+                                result.add(array);
+                            }
                         }
                         break;
                 }
