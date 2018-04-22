@@ -24,7 +24,6 @@ public class KenkenFrame extends JFrame {
 
     public KenkenFrame(){
 
-
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("KenKen");
         //this.setResizable(false);

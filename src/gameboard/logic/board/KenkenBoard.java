@@ -12,22 +12,16 @@ public class KenkenBoard {
     private final int COLUMNS;
     private final int ROWS;
 
-    public KenkenBoard(int rows,int columns, boolean random){
+    public KenkenBoard(int rows,int columns, boolean random) {
         this.COLUMNS = columns;
         this.ROWS = rows;
         initializeBoards();
-        if (!random){
+        if (!random) {
             board = Generator.generateMatrix(board);
         }
         generateKenkenBoard(random);
         board = new int[ROWS][COLUMNS];
-        //printBoard();
-        /*
-        Solver s = new Solver(ROWS);
-        s.generatePermutations(shapeboard);
-        */
     }
-
 
     private void initializeBoards(){
         board = new int[ROWS][COLUMNS];
