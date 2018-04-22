@@ -12,27 +12,24 @@ public class KenkenBoard {
     private final int COLUMNS;
     private final int ROWS;
 
-    public KenkenBoard(int rows,int columns){
+    public KenkenBoard(int rows,int columns, boolean random) {
         this.COLUMNS = columns;
         this.ROWS = rows;
         initializeBoards();
-        generateKenkenBoard();
+        if (!random) {
+            board = Generator.generateMatrix(board);
+        }
+        generateKenkenBoard(random);
+        board = new int[ROWS][COLUMNS];
     }
-
 
     private void initializeBoards(){
         board = new int[ROWS][COLUMNS];
         shapeboard = new Shape[ROWS][COLUMNS];
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLUMNS; j++) {
-                board[i][j] = -1;
-            }
-        }
     }
 
 
-
-    private void generateKenkenBoard(){
+    private void generateKenkenBoard(boolean random){
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
                 if (shapeboard[i][j] != null)
@@ -40,7 +37,7 @@ public class KenkenBoard {
                 Shape shape = ShapeFactory.getInstance(ROWS);
                 while(!shape.fits(shapeboard,i,j))
                     shape = ShapeFactory.getInstance(ROWS);
-                shape.placeShape(shapeboard, i, j);
+                shape.placeShape(shapeboard,board,i,j,!random);
             }
         }
     }
@@ -59,6 +56,7 @@ public class KenkenBoard {
             }
             System.out.println();
         }
+        System.out.println("\n\n");
     }
 
     public int getNumColums(){return COLUMNS;}

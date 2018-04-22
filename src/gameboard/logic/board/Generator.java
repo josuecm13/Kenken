@@ -11,6 +11,10 @@ public class Generator {
         int attempts = 1000;
         while (!isValid(array, shape.getValid_combination()) && attempts-- > 0)
             array = generateRandomArray(range,shape.getLength(),operation);
+        return operate(operation,array);
+    }
+
+    public static int operate(Operation operation, int[] array){
         switch (operation){
             case ADD:
                 return sum(array);
@@ -28,7 +32,7 @@ public class Generator {
     }
 
     public static int calculateFontSize(int x){
-        return (int) (-0.64*x +21.09);
+        return (int) (-0.64*x +21.09) > 0 ? (int) (-0.64*x +21.09) : 1 ;
     }
 
     private static int sum(int[] array){
@@ -43,7 +47,7 @@ public class Generator {
         return (int) Math.pow(array[0],3);
     }
 
-    private static int mul(int[] array) {
+    static int mul(int[] array) {
         int result = 1;
         for (int i: array){
             result *= i;
@@ -84,8 +88,6 @@ public class Generator {
         return  array;
     }
 
-
-
     private static boolean isValid(int[] array, int[][] valid){
         for (int i = 0; i < array.length; i++) {
             if(repeats(array[i], array, i)){
@@ -124,19 +126,49 @@ public class Generator {
         return false;
     }
 
-    private static int[] range(int n){
+    public static int[] range(int n){
         int[] possibilities = new int[n];
-        int index = 10;
         for (int i = 0; i < n; i++) {
-            if (i < 10) {
-                possibilities[i] = i+1;
-            } else {
-                possibilities[i] =  (i+1) - (index += 2);
-            }
+            possibilities[i] = i+1;
         }
         return possibilities;
-
     }
+
+
+    public static int[][] generateMatrix(int[][] matrix){
+        int[] row  = range(matrix[0].length);
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = row[(j+i) % (matrix.length)];
+            }
+        }
+        Random r = new Random();
+        for (int i = 0; i < matrix.length; i++) {
+            if(r.nextInt(2) == 1)
+                matrix = swapRows(matrix, r.nextInt(matrix[0].length), r.nextInt(matrix[0].length));
+            else
+                matrix = swapColumns(matrix, r.nextInt(matrix.length), r.nextInt(matrix.length));
+        }
+        return matrix;
+    }
+
+    private static int[][] swapRows(int[][] matrix, int rowA, int rowB){
+        int[] rowTemp = matrix[rowA];
+        matrix[rowA] = matrix[rowB];
+        matrix[rowB] = rowTemp;
+        return matrix;
+    }
+
+    private static int[][] swapColumns(int[][] matrix, int columnA, int columnB){
+        int[] columnTemp = new int[matrix.length];
+        for (int i = 0; i <matrix.length ; i++) {
+            columnTemp[i] = matrix[i][columnA];
+            matrix[i][columnA] = matrix[i][columnB];
+            matrix[i][columnB] = columnTemp[i];
+        }
+        return matrix;
+    }
+
 
 
 }

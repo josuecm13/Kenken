@@ -1,6 +1,7 @@
 package gameboard.logic.shapes;
 
 
+import gameboard.logic.board.Generator;
 import gameboard.logic.board.Operation;
 
 import java.util.Random;
@@ -28,19 +29,21 @@ public abstract class Shape {
         return 9;
     }
 
-    public void placeShape(Shape shapeBoard[][],int i, int j){
+    public void placeShape(Shape shapeBoard[][], int[][] matrix, int i, int j, boolean solvable){
         Random rand = new Random();
         int orientation = rand.nextInt(orientations.length);
         while (!fits(shapeBoard, i, j, orientation)){
             orientation = rand.nextInt(orientations.length);
         }
-        fill(shapeBoard, i, j, orientation);
+        fill(shapeBoard, i, j, orientation, matrix, solvable);
     }
 
 
 
-    private void fill(Shape[][] shapeBoard, int i, int j, int orientation){
+
+    private void fill(Shape[][] shapeBoard, int i, int j, int orientation, int[][] matrix, boolean solvable){
         int firstItem = -1;
+        int[] solution = new int[ID.getLength()];
         head[0] = i;
         head[1] = j;
         for (int k = 0; k < orientations[orientation][0].length; k++) {
@@ -53,12 +56,16 @@ public abstract class Shape {
         for(int n = 0; n < orientations[orientation].length; n++){
             for (int m = 0; m < orientations[orientation][0].length; m++) {
                 if(orientations[orientation][n][m] == 1) {
+                    solution[cont] = matrix[i+n][j+m-firstItem];
                     coordinates[cont++]= new int[]{i+n,j+m-firstItem};
                     shapeBoard[i+n][j+m-firstItem] = this;
                 }
             }
         }
+        if(solvable)
+            setObjective(solution);
     }
+
 
     private boolean fits(Shape[][] shapeBoard, int i, int j, int orientation){
         if(i == j && i == 0 && orientations[orientation][0][0] == 0){
@@ -87,6 +94,10 @@ public abstract class Shape {
         return true;
     }
 
+    private void setObjective(int[] numbers){
+        objective = Generator.operate(operation,numbers);
+    }
+
     public boolean isHead(int i , int j){
         return (head[0] == i && head[1] == j);
     }
@@ -104,7 +115,6 @@ public abstract class Shape {
     }
 
     public abstract String toString();
-
 
 
     public enum ShapeTypeID {
