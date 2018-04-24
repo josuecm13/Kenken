@@ -6,6 +6,7 @@ public class Otype extends Shape {
 
     public Otype(int range){
         this.range = range;
+        this.solved = true;
         ID = ShapeTypeID.OTYPE;
         number = new int[ID.getLength()];
         coordinates = new int[ID.getLength()][2];
