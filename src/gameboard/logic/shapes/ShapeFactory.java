@@ -5,28 +5,28 @@ import java.util.Random;
 public class ShapeFactory {
 
 
-    public static Shape getInstance(int range) {
+    public static Shape getInstance(int range, boolean isRandom) {
         Random rand = new Random();
         int option = rand.nextInt(Shape.getCount());
         switch (option){
             case 0:
-                return new Stype(range);
+                return new Stype(range, isRandom);
             case 1:
-                return new Ztype(range);
+                return new Ztype(range, isRandom);
             case 2:
-                return new Ltype(range);
+                return new Ltype(range, isRandom);
             case 3:
-                return new Otype(range);
+                return new Otype(range, isRandom);
             case 4:
-                return new Jtype(range);
+                return new Jtype(range, isRandom);
             case 5:
-                return new Itype(range);
+                return new Itype(range, isRandom);
             case 6:
-                return new Ttype(range);
+                return new Ttype(range, isRandom);
             case 7:
-                return new TwoType(range);
+                return new TwoType(range, isRandom);
             default:
-                return new OneType(range);
+                return new OneType(range, isRandom);
         }
     }
 

@@ -18,7 +18,7 @@ public abstract class Shape {
     protected int objective;
     protected ShapeTypeID ID;
     int range;
-
+    protected boolean isRandom;
     public ArrayList<int[]> permutations;
     public boolean visited = false;
 
@@ -29,7 +29,6 @@ public abstract class Shape {
         }
         return false;
     }
-
 
     public static int getCount(){
         return 9;

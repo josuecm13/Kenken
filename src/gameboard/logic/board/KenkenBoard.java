@@ -36,9 +36,9 @@ public class KenkenBoard {
             for (int j = 0; j < COLUMNS; j++) {
                 if (shapeboard[i][j] != null)
                     continue;
-                Shape shape = ShapeFactory.getInstance(ROWS);
+                Shape shape = ShapeFactory.getInstance(ROWS, random);
                 while(!shape.fits(shapeboard,i,j))
-                    shape = ShapeFactory.getInstance(ROWS);
+                    shape = ShapeFactory.getInstance(ROWS, random);
                 shape.placeShape(shapeboard,board,i,j,!random);
             }
         }

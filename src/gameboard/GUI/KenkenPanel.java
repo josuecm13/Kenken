@@ -68,7 +68,7 @@ public class KenkenPanel extends JPanel {
 
         int i = 0;
         int j = 0;
-        Shape temp = ShapeFactory.getInstance(2);
+        Shape temp = ShapeFactory.getInstance(2, false);
         verticalBorders(slotHeight,slotWidth,i,j,temp);
         horizontalBorders(slotHeight,slotWidth,i,j,temp);
 

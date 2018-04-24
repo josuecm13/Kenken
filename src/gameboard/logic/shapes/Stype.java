@@ -4,14 +4,16 @@ import gameboard.logic.board.Generator;
 
 public class Stype extends Shape {
 
-    public Stype(int range){
+    public Stype(int range, boolean isRandom){
         this.range = range;
         ID = ShapeTypeID.STYPE;
         number = new int[ID.getLength()];
         coordinates = new int[ID.getLength()][2];
         orientations = ID.getOrientations();
         operation = ID.getOperation();
-        objective = Generator.generateResult(ID, operation,range);
+        if (isRandom) {
+            objective = Generator.generateResult(ID, operation,range);
+        }
     }
 
     @Override
