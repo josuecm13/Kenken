@@ -12,7 +12,8 @@ import java.util.*;
 public class Solver {
 
     private HashMap numbers;
-    Operate permutation;
+    public Operate permutation;
+    KenkenBoard board;
 
     public Solver(int length) {
         numbers = new HashMap();
@@ -21,9 +22,10 @@ public class Solver {
     }
 
     public Solver(KenkenBoard board, int length) {
+        this.board = board;
         numbers = new HashMap();
-        numbersMap(4);
-
+        numbersMap(length);
+        permutation = new Operate(generateNumbers(length));
     }
 
     public HashMap getNumbers() {
@@ -87,30 +89,58 @@ public class Solver {
         ArrayList<int[]> permutations = new ArrayList<>();
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat[0].length; j++) {
+                Shape shape = mat[i][j];
+                if (!shape.visited) {
+                    String op = shape.getOperation().getSymbol();
+                    int length = shape.getID().getLength();
+                    int target = shape.getObjective();
 
-                Shape aux = mat[i][j];
-                String op = aux.getOperation().getSymbol();
-                int length = aux.getID().getLength();
-                int target = aux.getObjective();
-
-                switch (length) {
-                    case 1:
-                        permutations = permutation.permutateOne(target);
-                        break;
-                    case 2:
-                        permutations = permutation.permutateTwo(op, target);
-                        break;
-                    case  3:
-                        permutations = permutation.permutateThree(op, target);
-                        break;
-                    case 4:
-                        permutations = permutation.permutateFour(op, target);
-                        break;
+                    switch (length) {
+                        case 1:
+                            permutations = permutation.permutateOne(target);
+                            break;
+                        case 2:
+                            permutations = permutation.permutateTwo(op, target);
+                            break;
+                        case 3:
+                            permutations = permutation.permutateThree(op, target);
+                            break;
+                        case 4:
+                            permutations = permutation.permutateFour(op, target);
+                            break;
+                    }
+                    shape.permutations = permutations;
+                    shape.visited = true;
                 }
-
             }
         }
         return permutations;
+    }
+
+    public boolean solve(int row, int column) {
+        Shape shape = board.getShapeboard()[row][column];
+        ArrayList<int[]> permutations = shape.permutations;
+        for (int[] p : permutations) {
+            if (complete(row, column)) {
+                return true;
+            }
+            // Podas aqui
+            if (validPlace(row, column, board.getBoard())) {
+                shape.number = p;
+                if (row == board.getNumRows()-1) {
+                    return solve(0, column++);
+                }
+                return solve(row++, column);
+            }
+        }
+        return false;
+    }
+
+    private boolean complete(int row, int column) {
+        if (row == board.getNumRows()-1 && column == board.getNumRows()-1) {
+            return true;
+        }
+        return false;
     }
 
 

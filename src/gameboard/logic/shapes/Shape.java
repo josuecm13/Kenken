@@ -4,6 +4,7 @@ package gameboard.logic.shapes;
 import gameboard.logic.board.Generator;
 import gameboard.logic.board.Operation;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Shape {
@@ -15,6 +16,9 @@ public abstract class Shape {
     protected int objective;
     protected ShapeTypeID ID;
     int range;
+
+    public ArrayList<int[]> permutations;
+    public boolean visited = false;
 
     public boolean fits(Shape[][] board, int i, int j){
         for (int k = 0; k < orientations.length ; k++) {
