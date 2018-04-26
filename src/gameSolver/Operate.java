@@ -111,7 +111,8 @@ public class Operate {
                 for (int k = 0; k < numArray.size(); k++) {
                     for (int l = 0; l < numArray.size(); l++) {
                         if (numArray.get(i) == numArray.get(j) || numArray.get(j) == numArray.get(k)
-                                || numArray.get(k) == numArray.get(l) || numArray.get(l) == numArray.get(i)) {
+                                || numArray.get(k) == numArray.get(l) || numArray.get(l) == numArray.get(j)
+                                || numArray.get(i) == numArray.get(k)) {
                             continue;
                         }
                         switch (operation) {

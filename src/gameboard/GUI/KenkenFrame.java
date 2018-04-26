@@ -30,7 +30,7 @@ public class KenkenFrame extends JFrame {
         this.setMinimumSize(new Dimension(700,760));
         xStream = new XStream(new DomDriver());
 
-        kPanel = new KenkenPanel(new KenkenBoard(8,8,true));
+        kPanel = new KenkenPanel(new KenkenBoard(5,5,false));
 
         comboBox = new JComboBox<>();
         tf = new JTextField(20);
