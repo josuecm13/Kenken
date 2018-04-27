@@ -13,7 +13,6 @@ public class KenkenBoard {
     private Shape shapeboard[][];
     private final int COLUMNS;
     private final int ROWS;
-    private Solver solver;
 
     public KenkenBoard(int rows,int columns, boolean random) {
         this.COLUMNS = columns;
@@ -25,9 +24,6 @@ public class KenkenBoard {
         generateKenkenBoard(random);
         printBoard();
 
-        solver = new Solver(this, ROWS);
-        solver.generatePermutations(shapeboard);
-        solver.solve();
     }
 
     private void initializeBoards(){
@@ -66,7 +62,6 @@ public class KenkenBoard {
         System.out.println("\n\n");
     }
 
-
     public int getNumColums(){return COLUMNS;}
     public int getNumRows() {return ROWS;}
     public Shape[][] getShapeboard(){return shapeboard;}
@@ -74,8 +69,6 @@ public class KenkenBoard {
     public int[][] getBoard() {
         return board;
     }
-
-
 
 
 }

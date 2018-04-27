@@ -138,6 +138,8 @@ public abstract class Shape {
         return matrix;
     }
 
+
+
     public enum ShapeTypeID {
         LTYPE(  new int[][][]{{{1, 0, 0}, {1, 0, 0}, {1, 1, 0}},
                 {{1, 1, 1}, {1, 0, 0}, {0, 0, 0}},

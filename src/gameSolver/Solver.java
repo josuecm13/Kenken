@@ -11,18 +11,26 @@ import java.util.*;
 
 public class Solver {
 
-    public Operate permutation;
-    KenkenBoard board;
-    private int length;
-
-    public Solver(int length) {
-        permutation = new Operate(generateNumbers(length));
-    }
+    private Operate permutation;
+    private KenkenBoard kenkenBoard;
+    private int shapeNum;
+    private int board[][];
+    private Shape shapeboard[][];
 
     public Solver(KenkenBoard board, int length) {
-        this.board = board;
+        this.kenkenBoard = board;
+        this.board = kenkenBoard.getBoard();
+        this.shapeboard = kenkenBoard.getShapeboard();
         permutation = new Operate(generateNumbers(length));
-        this.length = length;
+        shapeNum = countShapes(board.getShapeboard());
+    }
+
+    public int[][] getBoard() {
+        return board;
+    }
+
+    public Shape[][] getShapeboard() {
+        return shapeboard;
     }
 
     private ArrayList<Integer> generateNumbers(int length) {
@@ -33,29 +41,26 @@ public class Solver {
         return numArray;
     }
 
+    private int countShapes(Shape[][] shape) {
+        int result = 0;
+        for (int i = 0; i < shape.length; i++) {
+            for (int j = 0; j < shape[0].length; j++) {
+                if (!shape[i][j].visited) {
+                    result++;
+                    shape[i][j].visited = true;
+                }
+            }
+        }
+        setVisitedFalse(shape);
+        return result;
+    }
+
     private int[] getColumn(int[][] mat, int column) {
         int[] result = new int[mat.length];
         for (int i = 0; i < mat.length; i++) {
             result[i] = mat[i][column];
         }
         return result;
-    }
-
-    private boolean contains(int num, int[] line) {
-        List<int[]> list = Arrays.asList(line);
-        if (list.contains(num)) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean validPlace(int row, int col, int[][] mat) {
-        int[] column = getColumn(mat, col);
-        int[] rows = mat[row];
-        if (!contains(mat[row][col], column) && !contains(mat[row][col], rows)) {
-            return true;
-        }
-        return false;
     }
 
     public ArrayList<int[]> generatePermutations(Shape[][] mat) {
@@ -87,7 +92,7 @@ public class Solver {
                 }
             }
         }
-        setVisitedFalse();
+        setVisitedFalse(mat);
         return permutations;
     }
 
@@ -101,22 +106,24 @@ public class Solver {
         System.out.println();
     }
 
-    public boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard) {
+    private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) {
         printMatrix(matrix.clone());
-        if (complete(row, column, matrix)) {
+        if (complete(counter, matrix.clone())) {
+            System.out.println("########  Resultado  ########");
             printMatrix(matrix.clone());
             return true;
         }
         int size = (matrix.length-1);
         Shape shape = shapeBoard[row][column];
+        if (!(matrix[row][column] == Integer.MIN_VALUE)) {
+            return solveAux(column == size ? (row % size) + 1 : (row % size), column == size ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
+        }
         ArrayList<int[]> permutations = shape.permutations;
         for (int[] p : permutations) {
             shape.number = p.clone();
             if (valid(shape.setPermutation(matrix).clone())) {
-
                 matrix = shape.setPermutation(matrix);
-                shape.visited = true;
-                if (solveAux(column == size ? (row % size) + 1 : (row % size), column == size ? 0 : (column % size) + 1, matrix, shapeBoard))
+                if (solveAux(column == size ? (row % size) + 1 : (row % size), column == size ? 0 : (column % size) + 1, matrix, shapeBoard, counter+1))
                     return true;
             }
             shape.number = empty(shape.number);
@@ -159,35 +166,38 @@ public class Solver {
         return true;
     }
 
-    private boolean complete(int row, int column, int[][] matrix) {
-        if (row == board.getNumRows() - 1 && column == board.getNumRows() - 1 && valid(matrix)) {
+    private boolean complete(int cont, int[][] matrix) {
+        if (cont == shapeNum && valid(matrix)) {
             return true;
         }
         return false;
     }
 
     public void solve() {
-        solvePows();
-        solveAux(0, 0, board.getBoard(), board.getShapeboard());
+        int pows = solvePows();
+        System.out.println(solveAux(0, 0, board, shapeboard, pows));
     }
 
-    private void solvePows() {
-        for (int i = 0; i < board.getShapeboard().length; i++) {
-            for (int j = 0; j < board.getShapeboard()[0].length; j++) {
-                Shape shape = board.getShapeboard()[i][j];
+    private int solvePows() {
+        int counter = 0;
+        for (int i = 0; i < kenkenBoard.getShapeboard().length; i++) {
+            for (int j = 0; j < kenkenBoard.getShapeboard()[0].length; j++) {
+                Shape shape = kenkenBoard.getShapeboard()[i][j];
                 if (shape.getOperation().getSymbol().equals("^")) {
                     shape.number = shape.permutations.get(0);
-                    shape.setPermutation(board.getBoard());
+                    shape.setPermutation(kenkenBoard.getBoard());
+                    counter++;
                     shape.visited = true;
                 }
             }
         }
+        return counter;
     }
 
-    private void setVisitedFalse(){
-        for (int i = 0; i < board.getShapeboard().length; i++) {
-            for (int j = 0; j < board.getShapeboard()[0].length; j++) {
-                Shape shape = board.getShapeboard()[i][j];
+    private void setVisitedFalse(Shape[][] shapes){
+        for (int i = 0; i < shapes.length; i++) {
+            for (int j = 0; j < shapes[0].length; j++) {
+                Shape shape = shapes[i][j];
                 shape.visited = false;
             }
         }
