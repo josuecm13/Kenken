@@ -153,8 +153,7 @@ public class KenkenFrame extends JFrame{
 
         @Override
         public void run() {
-            if (!solver.solve()) {
-            }
+            solver.solve();
         }
     }
 

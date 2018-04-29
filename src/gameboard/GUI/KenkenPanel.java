@@ -70,6 +70,7 @@ public class KenkenPanel extends JPanel {
         usedWidth = (this.getWidth()/board.getNumColums())*board.getNumColums();
         usedHeight = (this.getHeight()/board.getNumRows())*board.getNumRows();
         g2d.fillRect(0, 0,usedWidth,usedHeight);
+        paintingShapes(0,0);
         makeGrid(slotWidth,slotHeight);
 
         int i = 0;
@@ -87,7 +88,7 @@ public class KenkenPanel extends JPanel {
 
 
     private void makeGrid(int slotWidth, int slotHeight){
-        g2d.setColor(new Color(0.9f,0.9f,0.9f));
+        g2d.setColor(new Color(0.8f,0.8f,0.8f));
         for(int x = 0;x <= usedWidth;x+=slotWidth) {
             g2d.setStroke(new BasicStroke(4));
             g2d.drawLine(x, 0, x, usedHeight);
@@ -95,6 +96,26 @@ public class KenkenPanel extends JPanel {
         for (int y = 0; y < usedHeight ; y+=slotHeight) {
             g2d.setStroke(new BasicStroke(4));
             g2d.drawLine(0, y, usedWidth, y);
+        }
+    }
+
+    private void paintingShapes(int i, int j){
+        int slotWidth = this.getWidth()/board.getNumColums();
+        int slotHeight = this.getHeight()/board.getNumRows();
+        Shape tmp = null;
+        for (int y = 0; y < usedHeight ; y+= slotHeight) {
+            for (int x = 0; x < usedWidth; x += slotWidth) {
+                if(board.getShapeboard()[i][j] != tmp){
+                    tmp = board.getShapeboard()[i][j];
+                    Color c =g2d.getColor();
+                    g2d.setColor(tmp.getColor(board.getBoard()));
+                    g2d.fillRect(x, y,x+usedWidth-4,y+usedHeight-4);
+                    g2d.setColor(c);
+                }
+                j++;
+            }
+            j=0;
+            i++;
         }
     }
 

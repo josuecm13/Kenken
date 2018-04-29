@@ -112,7 +112,7 @@ public class Solver{
         System.out.println();
     }
 
-    private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) throws InterruptedException {
+    private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) {
         printMatrix(matrix.clone());
         System.out.print(row);
         System.out.println(column);
@@ -200,14 +200,12 @@ public class Solver{
         return false;
     }
 
-    public boolean solve() {
+    public void solve() {
         int pows = solvePows();
-        try {
-            return solveAux(0, 0, board, shapeboard, pows);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            return false;
-        }
+        if(solveAux(0, 0, board, shapeboard, pows))
+            JOptionPane.showMessageDialog(null, "The table has been solved","Solution", JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(null, "The table is unsolvable","Solution", JOptionPane.ERROR_MESSAGE);
     }
 
     private int solvePows() {
