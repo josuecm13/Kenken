@@ -1,6 +1,9 @@
 package gameSolver;
 
+import gameboard.logic.shapes.Shape;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ${gaboq} on 19/4/2018.
@@ -129,6 +132,31 @@ public class Operate {
             }
         }
         return result;
+    }
+
+    public ArrayList<int[]> shapePodeTwo(Shape shape, ArrayList<int[]> shapes) {
+        List<int[]> toRemove = new ArrayList();
+        for (int[] array : shapes) {
+            if (array[0] == array[1]) {
+                shapes.remove(array);
+            }
+        }
+        shapes.removeAll(toRemove);
+        return shapes;
+    }
+
+    public ArrayList<int[]> shapePodeFour(Shape shape, ArrayList<int[]> shapes) {
+        if (shape.toString() != "T" || shape.toString() != "L") {
+            List<int[]> toRemove = new ArrayList();
+            for (int[] array : shapes) {
+                if (array[0] == array[1] || array[2] == array[3]) {
+                    toRemove.add(array);
+                }
+            }
+            shapes.removeAll(toRemove);
+            return shapes;
+        }
+        return shapes;
     }
 
 }

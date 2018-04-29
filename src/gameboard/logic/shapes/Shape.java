@@ -71,7 +71,6 @@ public abstract class Shape {
             setObjective(solution);
     }
 
-
     private boolean fits(Shape[][] shapeBoard, int i, int j, int orientation, int[][] matrix){
         if(i == j && i == 0 && orientations[orientation][0][0] == 0){
             return false;
@@ -138,7 +137,12 @@ public abstract class Shape {
         return matrix;
     }
 
-
+    public boolean isValid(int[] array) {
+        if (true) {
+            return false;
+        }
+        return true;
+    }
 
     public enum ShapeTypeID {
         LTYPE(  new int[][][]{{{1, 0, 0}, {1, 0, 0}, {1, 1, 0}},
