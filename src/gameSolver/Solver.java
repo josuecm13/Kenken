@@ -127,6 +127,7 @@ public class Solver{
             return solveAux(column == size ? (row % size) + 1 : (row % size), column == size ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
         }
         ArrayList<int[]> permutations = shape.permutations;
+        shapesPodes(shape, permutations, shape.getID().getLength());
         for (int[] p : permutations) {
             shape.number = p.clone();
             if (valid(shape.setPermutation(matrix).clone())) {
@@ -138,6 +139,19 @@ public class Solver{
             matrix = shape.setPermutation(matrix);
         }
         return false;
+    }
+
+    private ArrayList<int[]> shapesPodes(Shape shape, ArrayList<int[]> shapes, int size) {
+        switch (size) {
+            case 2:
+                permutation.shapePodeTwo(shape, shapes);
+                break;
+            case 4:
+                permutation.shapePodeFour(shape, shapes);
+                break;
+        }
+
+        return shapes;
     }
 
     private int[] empty(int[] array) {
