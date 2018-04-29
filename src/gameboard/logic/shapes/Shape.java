@@ -42,8 +42,8 @@ public abstract class Shape {
         fill(shapeBoard, i, j, orientation, matrix, solvable);
     }
 
-    public Color getColor(){
-        return solved ?  ID.getColor() : Color.WHITE;
+    public Color getColor(int[][] matrix){
+        return Color.WHITE;//matrix[this.coordinates[0][0]][this.coordinates[0][1]] != Integer.MIN_VALUE  ?  ID.getColor() : Color.WHITE;
     }
 
     private void fill(Shape[][] shapeBoard, int i, int j, int orientation, int[][] matrix, boolean solvable){
@@ -144,41 +144,41 @@ public abstract class Shape {
                 {{1, 1, 1}, {1, 0, 0}, {0, 0, 0}},
                 {{1, 1, 0}, {0, 1, 0}, {0, 1, 0}},
                 {{0, 0, 1}, {1, 1, 1}, {0, 0, 0}}},
-                4, Color.MAGENTA ,new int[][]{{0,3},{0,2}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+                4, Color.decode("#ff99bb") ,new int[][]{{0,3},{0,2}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
 
         JTYPE(   new int[][][]{{{0, 1, 0}, {0, 1, 0}, {1, 1, 0}},
                 {{1, 0, 0}, {1, 1, 1}, {0, 0, 0}},
                 {{1, 1, 0}, {1, 0, 0}, {1, 0, 0}},
                 {{1, 1, 1}, {0, 0, 1}, {0, 0, 0}}},
-                4, Color.YELLOW ,new int[][]{{0, 3}, {1, 3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+                4, Color.decode("#E7C843") ,new int[][]{{0, 3}, {1, 3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
 
         OTYPE(  new int[][][]{{{1, 1}, {1, 1}}},
-                4,Color.BLUE,new int[][] {{0, 3}, {1, 2}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+                4,Color.decode("#808ccb"),new int[][] {{0, 3}, {1, 2}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
 
         ITYPE(  new int[][][]{{{1, 0, 0, 0}, {1, 0, 0, 0}, {1, 0, 0, 0}, {1, 0, 0, 0}},
                 {{1, 1, 1, 1},{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}},
-                4, Color.RED, new int[0][0],new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+                4, Color.decode("#d65f5c"), new int[0][0],new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
 
         TTYPE(  new int[][][]{{{1, 1, 1}, {0, 1, 0}, {0, 0, 0}},
                 {{0, 1, 0}, {1, 1, 0}, {0, 1, 0}},
                 {{0, 1, 0}, {1, 1, 1}, {0, 0, 0}},
                 {{1, 0, 0}, {1, 1, 0}, {1, 0, 0}}},
-                4, Color.GREEN, new int[][]{},new Operation[]{Operation.ADD,Operation.MUL}),
+                4, Color.decode("#4dff88"), new int[][]{},new Operation[]{Operation.ADD,Operation.MUL}),
 
         STYPE(  new int[][][]{{ {0, 1, 1}, {1, 1, 0}, {0, 0, 0}},
                                 {{1, 0, 0},{1, 1, 0}, {0, 1, 0}}},
-                4, Color.CYAN, new int[][]{{0,2}, {0,3}, {1,3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+                4, Color.decode("#33cccc"), new int[][]{{0,2}, {0,3}, {1,3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
 
         ZTYPE(  new int[][][]{{{1, 1, 0}, {0, 1, 1}, {0, 0, 0}},
                 {{0, 1, 0}, {1, 1, 0}, {1, 0, 0}}},
-                4, Color.ORANGE, new int[][]{{0, 2}, {0, 3}, {1, 3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
+                4, Color.decode("#ff4500"), new int[][]{{0, 2}, {0, 3}, {1, 3}},new Operation[]{Operation.ADD,Operation.SUB,Operation.MUL}),
 
         TWOTYPE(new int[][][]{{{1, 0}, {1, 0}},
                 {{1, 1}, {0, 0}}},
-                2, Color.PINK,new int[0][0],new Operation[]{Operation.DIV,Operation.ADD,Operation.MUL,Operation.MOD,Operation.SUB}),
+                2, Color.decode("#b366ff"),new int[0][0],new Operation[]{Operation.DIV,Operation.ADD,Operation.MUL,Operation.MOD,Operation.SUB}),
 
         ONETYPE(new int[][][]{{{1}}},
-                1,Color.GRAY ,new int[0][0],new Operation[]{Operation.EXP});
+                1,Color.decode("#d9d9d9") ,new int[0][0],new Operation[]{Operation.EXP});
 
         private final int[][][] orientations;
         private final int length;
