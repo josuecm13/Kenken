@@ -43,7 +43,7 @@ public abstract class Shape {
     }
 
     public Color getColor(int[][] matrix){
-        return Color.WHITE;//matrix[this.coordinates[0][0]][this.coordinates[0][1]] != Integer.MIN_VALUE  ?  ID.getColor() : Color.WHITE;
+        return matrix[this.coordinates[0][0]][this.coordinates[0][1]] != Integer.MIN_VALUE  ?  ID.getColor() : Color.WHITE;
     }
 
     private void fill(Shape[][] shapeBoard, int i, int j, int orientation, int[][] matrix, boolean solvable){
@@ -67,8 +67,18 @@ public abstract class Shape {
                 }
             }
         }
-        if(solvable)
+        if(solvable){
+            if (this.getOperation() == Operation.MUL){
+                for (int num: solution) {
+                    if (num == 0){
+                        while (operation == Operation.MUL){
+                            operation = ID.getOperation();
+                        }
+                    }
+                }
+            }
             setObjective(solution);
+        }
     }
 
     private boolean fits(Shape[][] shapeBoard, int i, int j, int orientation, int[][] matrix){
