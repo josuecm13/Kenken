@@ -4,6 +4,8 @@ import gameSolver.Solver;
 import gameboard.logic.shapes.Shape;
 import gameboard.logic.shapes.ShapeFactory;
 
+import java.util.ArrayList;
+
 
 public class KenkenBoard {
 
@@ -11,7 +13,6 @@ public class KenkenBoard {
     private Shape shapeboard[][];
     private final int COLUMNS;
     private final int ROWS;
-    private Solver solver;
 
     public KenkenBoard(int rows,int columns, boolean random) {
         this.COLUMNS = columns;
@@ -21,8 +22,8 @@ public class KenkenBoard {
             board = Generator.generateMatrix(board);
         }
         generateKenkenBoard(random);
-        solver = new Solver(this, ROWS);
-        solver.generatePermutations(shapeboard);
+        printBoard();
+
     }
 
     private void initializeBoards(){
@@ -30,14 +31,13 @@ public class KenkenBoard {
         shapeboard = new Shape[ROWS][COLUMNS];
     }
 
-
     private void generateKenkenBoard(boolean random){
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
                 if (shapeboard[i][j] != null)
                     continue;
                 Shape shape = ShapeFactory.getInstance(ROWS, random);
-                while(!shape.fits(shapeboard,i,j))
+                while(!shape.fits(shapeboard,i,j,board))
                     shape = ShapeFactory.getInstance(ROWS, random);
                 shape.placeShape(shapeboard,board,i,j,!random);
             }
@@ -55,6 +55,7 @@ public class KenkenBoard {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
                 System.out.print(board[i][j] + "\t");
+                board[i][j] = Integer.MIN_VALUE;
             }
             System.out.println();
         }
@@ -68,8 +69,6 @@ public class KenkenBoard {
     public int[][] getBoard() {
         return board;
     }
-
-
 
 
 }

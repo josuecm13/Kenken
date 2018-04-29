@@ -25,9 +25,6 @@ public class Operate {
         ArrayList<int[]> result = new ArrayList<>();
         for (int i = 0; i < (numArray.size()); i++) {
             for (int j = 0; j < (numArray.size()); j++) {
-                if (numArray.get(i) == numArray.get(j)) {
-                    continue;
-                }
                 switch (operation) {
                     case "+":
                         if (numArray.get(i) + numArray.get(j) == target) {
@@ -74,9 +71,6 @@ public class Operate {
         for (int  i = 0; i < numArray.size(); i++) {
             for (int j = 0; j < numArray.size(); j++) {
                 for (int k = 0; k < numArray.size(); k++) {
-                    if (numArray.get(i) == numArray.get(j) || numArray.get(j) == numArray.get(k)) {
-                        continue;
-                    }
                     switch (operation) {
                         case "+":
                             if (numArray.get(i) + numArray.get(j) + numArray.get(k) == target) {
@@ -110,10 +104,6 @@ public class Operate {
             for (int j = 0; j < numArray.size(); j++) {
                 for (int k = 0; k < numArray.size(); k++) {
                     for (int l = 0; l < numArray.size(); l++) {
-                        if (numArray.get(i) == numArray.get(j) || numArray.get(j) == numArray.get(k)
-                                || numArray.get(k) == numArray.get(l) || numArray.get(l) == numArray.get(i)) {
-                            continue;
-                        }
                         switch (operation) {
                             case "+":
                                 if (numArray.get(i) + numArray.get(j) + numArray.get(k) + numArray.get(l) == target) {

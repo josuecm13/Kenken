@@ -129,7 +129,7 @@ public class Generator {
     public static int[] range(int n){
         int[] possibilities = new int[n];
         for (int i = 0; i < n; i++) {
-            possibilities[i] = i+1;
+            possibilities[i] = i;
         }
         return possibilities;
     }

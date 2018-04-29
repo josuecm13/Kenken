@@ -2,6 +2,7 @@ package gameboard.GUI;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
+import gameSolver.Solver;
 import gameboard.logic.board.Generator;
 import gameboard.logic.board.KenkenBoard;
 
@@ -30,7 +31,7 @@ public class KenkenFrame extends JFrame {
         this.setMinimumSize(new Dimension(700,760));
         xStream = new XStream(new DomDriver());
 
-        kPanel = new KenkenPanel(new KenkenBoard(8,8,true));
+        kPanel = new KenkenPanel(new KenkenBoard(5,5,false));
 
         comboBox = new JComboBox<>();
         tf = new JTextField(20);
@@ -50,6 +51,13 @@ public class KenkenFrame extends JFrame {
         }catch (Exception exc){
             exc.printStackTrace();
         }});
+
+        JButton solveButton = new JButton("Solve");
+        solveButton.addActionListener(e ->{
+            Solver solver = new Solver(kPanel.getBoard(),kPanel.getBoard().getNumRows());
+            solver.generatePermutations(kPanel.getBoard().getShapeboard());
+            solver.solve();
+        });
 
         JButton saveTable = new JButton("Save Table");
         saveTable.addActionListener(e -> {
@@ -105,6 +113,7 @@ public class KenkenFrame extends JFrame {
         windowPanel.add(generatorButton);
         windowPanel.add(saveTable);
         windowPanel.add(openTable);
+        windowPanel.add(solveButton);
         this.add(windowPanel);
 
     }
