@@ -2,6 +2,7 @@ package gameSolver;
 
 import gameboard.GUI.KenkenFrame;
 import gameboard.logic.board.KenkenBoard;
+import gameboard.logic.board.Operation;
 import gameboard.logic.shapes.Shape;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -113,26 +114,30 @@ public class Solver{
 
     private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) throws InterruptedException {
         printMatrix(matrix.clone());
+        System.out.print(row);
+        System.out.println(column);
         view.getkPanel().getBoard().setBoard(matrix.clone());
         view.getkPanel().repaint();
-        //Thread.sleep(1);
         if (complete(counter, matrix.clone())) {
             System.out.println("########  Resultado  ########");
             printMatrix(matrix.clone());
             return true;
         }
-        int size = (matrix.length-1);
+        int size = (matrix.length);
         Shape shape = shapeBoard[row][column];
+        if (shape.toString() == "2") {
+            System.out.println();
+        }
         if (!(matrix[row][column] == Integer.MIN_VALUE)) {
-            return solveAux(column == size ? (row % size) + 1 : (row % size), column == size ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
+            return solveAux(column == size-1 ? (row % size) + 1 : (row % size), column == size-1 ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
         }
         ArrayList<int[]> permutations = shape.permutations;
-        shapesPodes(shape, permutations, shape.getID().getLength());
+        //shapesPodes(shape, permutations, shape.getID().getLength());
         for (int[] p : permutations) {
             shape.number = p.clone();
             if (valid(shape.setPermutation(matrix).clone())) {
                 matrix = shape.setPermutation(matrix);
-                if (solveAux(column == size ? (row % size) + 1 : (row % size), column == size ? 0 : (column % size) + 1, matrix, shapeBoard, counter+1))
+                if (solveAux(column == size-1 ? (row % size) + 1 : (row % size), column == size-1 ? 0 : (column % size) + 1, matrix, shapeBoard, counter+1))
                     return true;
             }
             shape.number = empty(shape.number);
@@ -144,10 +149,10 @@ public class Solver{
     private ArrayList<int[]> shapesPodes(Shape shape, ArrayList<int[]> shapes, int size) {
         switch (size) {
             case 2:
-                permutation.shapePodeTwo(shape, shapes);
+                //permutation.shapePodeTwo(shape, shapes);
                 break;
             case 4:
-                permutation.shapePodeFour(shape, shapes);
+                //permutation.shapePodeFour(shape, shapes);
                 break;
         }
 
@@ -195,12 +200,13 @@ public class Solver{
         return false;
     }
 
-    public void solve() {
+    public boolean solve() {
         int pows = solvePows();
         try {
-            System.out.println(solveAux(0, 0, board, shapeboard, pows));
+            return solveAux(0, 0, board, shapeboard, pows);
         } catch (InterruptedException e) {
             e.printStackTrace();
+            return false;
         }
     }
 

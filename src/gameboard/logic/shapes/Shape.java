@@ -67,8 +67,16 @@ public abstract class Shape {
                 }
             }
         }
-        if(solvable)
+        if(solvable) {
+            if (this.getOperation() == Operation.MUL) {
+                for (int num : solution) {
+                    if (num == 0) {
+                        operation = ID.getOperation();
+                    }
+                }
+            }
             setObjective(solution);
+        }
     }
 
     private boolean fits(Shape[][] shapeBoard, int i, int j, int orientation, int[][] matrix){

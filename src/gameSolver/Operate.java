@@ -138,7 +138,7 @@ public class Operate {
         List<int[]> toRemove = new ArrayList();
         for (int[] array : shapes) {
             if (array[0] == array[1]) {
-                shapes.remove(array);
+                toRemove.add(array);
             }
         }
         shapes.removeAll(toRemove);

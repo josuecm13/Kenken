@@ -55,14 +55,6 @@ public class KenkenFrame extends JFrame{
 
         JButton solveButton = new JButton("Solve");
         solveButton.addActionListener(e ->{
-            /*
-            Solver solver = new Solver(kPanel.getBoard(),kPanel.getBoard().getNumRows());
-            solver.generatePermutations(kPanel.getBoard().getShapeboard());
-            solver.setView(this);
-            solver.solve();
-            */
-
-
             FrameUpdater updater = new FrameUpdater(new Solver(kPanel.getBoard(),kPanel.getBoard().getNumRows()),this);
             Thread t = new Thread(updater);
             t.start();
@@ -161,7 +153,8 @@ public class KenkenFrame extends JFrame{
 
         @Override
         public void run() {
-            solver.solve();
+            if (!solver.solve()) {
+            }
         }
     }
 
