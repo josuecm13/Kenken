@@ -31,6 +31,8 @@ public class Generator {
         }
     }
 
+    public static int calculateNumFontSize(int x) {return (int) (160*(Math.pow(0.87055056,x))); }
+
     public static int calculateFontSize(int x){
         return (int) (-0.64*x +21.09) > 0 ? (int) (-0.64*x +21.09) : 1 ;
     }

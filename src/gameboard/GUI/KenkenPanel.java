@@ -13,6 +13,8 @@ public class KenkenPanel extends JPanel {
     private int usedWidth;
     private int usedHeight;
     private int fontSize;
+    private int numFontSize;
+    private int numGapX, numGapY;
     private int gapX;
     private int gapY;
     Graphics2D g2d;
@@ -25,6 +27,7 @@ public class KenkenPanel extends JPanel {
         gapX = 10;
         gapY = 16;
         fontSize=23;
+        numFontSize = 50;
     }
 
     public void setGapX(int gapX) {
@@ -43,6 +46,9 @@ public class KenkenPanel extends JPanel {
         gapX = 5;
         gapY = 16;
         fontSize = 16;
+        numFontSize = 80;
+        numGapY  = 90;
+        numGapX = 40;
     }
 
     public void setBoard(KenkenBoard board) {
@@ -71,6 +77,8 @@ public class KenkenPanel extends JPanel {
         Shape temp = ShapeFactory.getInstance(2, false);
         verticalBorders(slotHeight,slotWidth,i,j,temp);
         horizontalBorders(slotHeight,slotWidth,i,j,temp);
+
+        setNumbers(board.getBoard());
 
         g2d.setColor(new Color(0.0f,0.0f,0.0f));
         g2d.drawLine(usedWidth,0,usedWidth,usedHeight);
@@ -129,6 +137,34 @@ public class KenkenPanel extends JPanel {
             i=0;
             j++;
         }
+    }
+
+    public void setNumConfiguration(int numFontSize, int numGapX, int numGapY){
+        this.numFontSize = numFontSize;
+        this.numGapX = numGapX;
+        this.numGapY = numGapY;
+    }
+
+    public void setNumbers(int[][] matrix){
+        g2d.setColor(new Color(0.0f,0.0f,0.0f));
+        int slotWidth = this.getWidth()/board.getNumColums();
+        int slotHeight = this.getHeight()/board.getNumRows();
+        int i = 0;
+        int j = 0;
+        for (int y = 0; y < usedHeight ; y+= slotHeight) {
+            for (int x = 0; x <usedWidth; x+= slotWidth) {
+                if(matrix[i][j] == Integer.MIN_VALUE) {
+                    j++;
+                    continue;
+                }
+                g2d.setFont(new Font(Font.MONOSPACED,Font.BOLD,numFontSize));
+                g2d.drawString(Integer.toString(matrix[i][j]),x+numGapX,y+numGapY);
+                j++;
+            }
+            j=0;
+            i++;
+        }
+        this.revalidate();
     }
 
     public KenkenBoard getBoard(){

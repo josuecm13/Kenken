@@ -1,18 +1,23 @@
 package gameSolver;
 
+import gameboard.GUI.KenkenFrame;
 import gameboard.logic.board.KenkenBoard;
 import gameboard.logic.shapes.Shape;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 
+import javax.swing.*;
 import java.util.*;
 
 /**
  * Created by ${gaboq} on 17/4/2018.
  */
 
-public class Solver {
+public class Solver{
 
     private Operate permutation;
     private KenkenBoard kenkenBoard;
+    private KenkenFrame view;
     private int shapeNum;
     private int board[][];
     private Shape shapeboard[][];
@@ -106,8 +111,11 @@ public class Solver {
         System.out.println();
     }
 
-    private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) {
+    private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) throws InterruptedException {
         printMatrix(matrix.clone());
+        view.getkPanel().getBoard().setBoard(matrix.clone());
+        view.getkPanel().repaint();
+        //Thread.sleep(1);
         if (complete(counter, matrix.clone())) {
             System.out.println("########  Resultado  ########");
             printMatrix(matrix.clone());
@@ -175,7 +183,11 @@ public class Solver {
 
     public void solve() {
         int pows = solvePows();
-        System.out.println(solveAux(0, 0, board, shapeboard, pows));
+        try {
+            System.out.println(solveAux(0, 0, board, shapeboard, pows));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private int solvePows() {
@@ -203,4 +215,7 @@ public class Solver {
         }
     }
 
+    public void setView(KenkenFrame view) {
+        this.view = view;
+    }
 }

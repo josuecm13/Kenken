@@ -11,13 +11,14 @@ import java.awt.*;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
-public class KenkenFrame extends JFrame {
+public class KenkenFrame extends JFrame{
 
     private KenkenPanel kPanel;
     private JComboBox<Object> comboBox;
     private JComboBox<Boolean> randComboBox;
-    private JTextField tf;
     private FileReader reader;
     private final XStream xStream;
     private PrintWriter out;
@@ -34,7 +35,7 @@ public class KenkenFrame extends JFrame {
         kPanel = new KenkenPanel(new KenkenBoard(5,5,false));
 
         comboBox = new JComboBox<>();
-        tf = new JTextField(20);
+        JTextField tf = new JTextField(20);
         comboBox = new JComboBox<>();
         for (int i = 5; i <= 19 ; i++) {
             comboBox.addItem(i);
@@ -54,9 +55,18 @@ public class KenkenFrame extends JFrame {
 
         JButton solveButton = new JButton("Solve");
         solveButton.addActionListener(e ->{
+            /*
             Solver solver = new Solver(kPanel.getBoard(),kPanel.getBoard().getNumRows());
             solver.generatePermutations(kPanel.getBoard().getShapeboard());
+            solver.setView(this);
             solver.solve();
+            */
+
+
+            FrameUpdater updater = new FrameUpdater(new Solver(kPanel.getBoard(),kPanel.getBoard().getNumRows()),this);
+            Thread t = new Thread(updater);
+            t.start();
+
         });
 
         JButton saveTable = new JButton("Save Table");
@@ -124,13 +134,35 @@ public class KenkenFrame extends JFrame {
             kPanel.setBoard(generatedboard);
         }
         int fontSize = Generator.calculateFontSize(dimension);
+        int numFontSize = Generator.calculateNumFontSize(dimension);
         kPanel.setFontSize(fontSize);
         kPanel.setGapY(fontSize);
+        kPanel.setNumConfiguration(numFontSize,numFontSize/2,(int) (numFontSize+(numFontSize*0.3)));
         kPanel.repaint();
     }
 
     public KenkenPanel getkPanel(){
         return kPanel;
+    }
+
+    public void update(int[][] matrix){
+        kPanel.setNumbers(matrix);
+    }
+
+    private class FrameUpdater implements Runnable{
+
+        private Solver solver;
+
+        FrameUpdater(Solver solver,KenkenFrame frame){
+            this.solver = solver;
+            solver.setView(frame);
+            solver.generatePermutations(kPanel.getBoard().getShapeboard());
+        }
+
+        @Override
+        public void run() {
+            solver.solve();
+        }
     }
 
 }
