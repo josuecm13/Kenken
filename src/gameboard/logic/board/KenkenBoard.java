@@ -69,6 +69,7 @@ public class KenkenBoard {
     public int[][] getBoard() {
         return board;
     }
+    public void setBoard(int[][] matrix) {board = matrix;}
 
 
 }

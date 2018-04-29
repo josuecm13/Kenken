@@ -76,7 +76,6 @@ public abstract class Shape {
             return false;
         }
         int[] solution = new int[ID.getLength()];
-        boolean result = true;
         int firstItem = -1;
         for (int k = 0; k < orientations[orientation][0].length; k++) {
             if(orientations[orientation][0][k] == 1) {
@@ -89,10 +88,10 @@ public abstract class Shape {
             for (int m = 0; m < orientations[orientation][0].length; m++) {
                 if(orientations[orientation][n][m] == 1) {
                     try {
-                        if (shapeBoard[i + n][j + m - firstItem] != null) {
-                            solution[cont] = matrix[i+n][j+m-firstItem];
-                            result = false;
-                        }
+                        if (shapeBoard[i + n][j + m - firstItem] != null)
+                            return false;
+                        else
+                            solution[cont++] = matrix[i+n][j+m-firstItem];
                     } catch (IndexOutOfBoundsException e) {
                         return false;
                     }
@@ -105,7 +104,7 @@ public abstract class Shape {
                     return false;
             }
         }
-        return result;
+        return true;
     }
 
     private void setObjective(int[] numbers){
