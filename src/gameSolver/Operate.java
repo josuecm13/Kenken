@@ -28,6 +28,9 @@ public class Operate {
         ArrayList<int[]> result = new ArrayList<>();
         for (int i = 0; i < (numArray.size()); i++) {
             for (int j = 0; j < (numArray.size()); j++) {
+                if (numArray.get(i) == numArray.get(j)) {
+                    continue;
+                }
                 switch (operation) {
                     case "+":
                         if (numArray.get(i) + numArray.get(j) == target) {
@@ -69,39 +72,7 @@ public class Operate {
         return result;
     }
 
-    public ArrayList<int[]> permutateThree(String operation, int target){
-        ArrayList<int[]> result = new ArrayList<>();
-        for (int  i = 0; i < numArray.size(); i++) {
-            for (int j = 0; j < numArray.size(); j++) {
-                for (int k = 0; k < numArray.size(); k++) {
-                    switch (operation) {
-                        case "+":
-                            if (numArray.get(i) + numArray.get(j) + numArray.get(k) == target) {
-                                int[] array = {numArray.get(i), numArray.get(j), numArray.get(k)};
-                                result.add(array);
-                            }
-                            break;
-                        case  "-":
-                            if (numArray.get(i) - numArray.get(j) - numArray.get(k) == target) {
-                                int[] array = {numArray.get(i), numArray.get(j), numArray.get(k)};
-                                result.add(array);
-                            }
-                            break;
-                        case "x":
-                            if (numArray.get(i) * numArray.get(j) * numArray.get(k) == target) {
-                                int[] array = {numArray.get(i), numArray.get(j), numArray.get(k)};
-                                result.add(array);
-                            }
-                            break;
-                    }
-
-                }
-            }
-        }
-        return result;
-    }
-
-    public ArrayList<int[]> permutateFour(String operation, int target){
+    public ArrayList<int[]> permutateFour(Shape shape, String operation, int target){
         ArrayList<int[]> result = new ArrayList<>();
         for (int  i = 0; i < numArray.size(); i++) {
             for (int j = 0; j < numArray.size(); j++) {
@@ -131,31 +102,32 @@ public class Operate {
                 }
             }
         }
+        shapePodeFour(shape, result);
         return result;
     }
 
-    public ArrayList<int[]> shapePodeTwo(Shape shape, ArrayList<int[]> shapes) {
+    public ArrayList<int[]> shapePodeFour(Shape shape, ArrayList<int[]> shapes) {
         List<int[]> toRemove = new ArrayList();
         for (int[] array : shapes) {
-            if (array[0] == array[1]) {
-                toRemove.add(array);
-            }
-        }
-        shapes.removeAll(toRemove);
-        return shapes;
-    }
-
-    public ArrayList<int[]> shapePodeFour(Shape shape, ArrayList<int[]> shapes) {
-        if (shape.toString() != "T" || shape.toString() != "L") {
-            List<int[]> toRemove = new ArrayList();
-            for (int[] array : shapes) {
-                if (array[0] == array[1] || array[2] == array[3]) {
+            if ((shape.getID() != Shape.ShapeTypeID.TTYPE ) && (shape.getID() != Shape.ShapeTypeID.ZTYPE)) {
+                if (array[0] == array[1]) {
                     toRemove.add(array);
                 }
             }
-            shapes.removeAll(toRemove);
-            return shapes;
+            if ((shape.getID() != Shape.ShapeTypeID.JTYPE ) && (shape.getID() != Shape.ShapeTypeID.OTYPE)
+                    && (shape.getID() != Shape.ShapeTypeID.STYPE )) {
+                if (array[2] == array[1]) {
+                    toRemove.add(array);
+                }
+            }
+            if ((shape.getID() != Shape.ShapeTypeID.LTYPE ) && (shape.getID() != Shape.ShapeTypeID.ZTYPE)
+                    && (shape.getID() != Shape.ShapeTypeID.TTYPE )) {
+                if (array[2] == array[3]) {
+                    toRemove.add(array);
+                }
+            }
         }
+        shapes.removeAll(toRemove);
         return shapes;
     }
 

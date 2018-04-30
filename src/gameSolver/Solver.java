@@ -86,11 +86,8 @@ public class Solver{
                         case 2:
                             permutations = permutation.permutateTwo(op, target);
                             break;
-                        case 3:
-                            permutations = permutation.permutateThree(op, target);
-                            break;
                         case 4:
-                            permutations = permutation.permutateFour(op, target);
+                            permutations = permutation.permutateFour(shape, op, target);
                             break;
                     }
                     shape.permutations = permutations;
@@ -113,9 +110,6 @@ public class Solver{
     }
 
     private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) {
-        printMatrix(matrix.clone());
-        System.out.print(row);
-        System.out.println(column);
         view.getkPanel().getBoard().setBoard(matrix.clone());
         view.getkPanel().repaint();
         if (complete(counter, matrix.clone())) {
@@ -132,7 +126,6 @@ public class Solver{
             return solveAux(column == size-1 ? (row % size) + 1 : (row % size), column == size-1 ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
         }
         ArrayList<int[]> permutations = shape.permutations;
-        //shapesPodes(shape, permutations, shape.getID().getLength());
         for (int[] p : permutations) {
             shape.number = p.clone();
             if (valid(shape.setPermutation(matrix).clone())) {
@@ -144,19 +137,6 @@ public class Solver{
             matrix = shape.setPermutation(matrix);
         }
         return false;
-    }
-
-    private ArrayList<int[]> shapesPodes(Shape shape, ArrayList<int[]> shapes, int size) {
-        switch (size) {
-            case 2:
-                //permutation.shapePodeTwo(shape, shapes);
-                break;
-            case 4:
-                //permutation.shapePodeFour(shape, shapes);
-                break;
-        }
-
-        return shapes;
     }
 
     private int[] empty(int[] array) {
