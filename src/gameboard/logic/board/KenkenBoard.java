@@ -62,6 +62,15 @@ public class KenkenBoard {
         System.out.println("\n\n");
     }
 
+
+
+    public void resetBoard(){
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLUMNS; j++) {
+                board[i][j] = Integer.MIN_VALUE;
+            }
+        }
+    }
     public int getNumColums(){return COLUMNS;}
     public int getNumRows() {return ROWS;}
     public Shape[][] getShapeboard(){return shapeboard;}

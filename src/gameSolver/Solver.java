@@ -119,9 +119,11 @@ public class Solver{
         }
         int size = (matrix.length);
         Shape shape = shapeBoard[row][column];
+        /*
         if (shape.toString() == "2") {
             System.out.println();
         }
+        */
         if (!(matrix[row][column] == Integer.MIN_VALUE)) {
             return solveAux(column == size-1 ? (row % size) + 1 : (row % size), column == size-1 ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
         }
