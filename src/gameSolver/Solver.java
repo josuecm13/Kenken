@@ -113,9 +113,9 @@ public class Solver{
     }
 
     private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) {
-        printMatrix(matrix.clone());
-        System.out.print(row);
-        System.out.println(column);
+        //printMatrix(matrix.clone());
+        //System.out.print(row);
+        //System.out.println(column);
         view.getkPanel().getBoard().setBoard(matrix.clone());
         view.getkPanel().repaint();
         if (complete(counter, matrix.clone())) {
@@ -125,9 +125,11 @@ public class Solver{
         }
         int size = (matrix.length);
         Shape shape = shapeBoard[row][column];
+        /*
         if (shape.toString() == "2") {
             System.out.println();
         }
+        */
         if (!(matrix[row][column] == Integer.MIN_VALUE)) {
             return solveAux(column == size-1 ? (row % size) + 1 : (row % size), column == size-1 ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
         }

@@ -94,6 +94,7 @@ public class KenkenFrame extends JFrame{
                 else{
                     reader = new FileReader(fd.getDirectory()+filename);
                     KenkenBoard board = (KenkenBoard) (xStream.fromXML(reader));
+                    board.resetBoard();
                     kPanel.setBoard(board);
                     rebuildInterface(board.getNumColums(), false);
                 }
