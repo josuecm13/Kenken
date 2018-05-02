@@ -78,7 +78,7 @@ public class KenkenFrame extends JFrame{
             }catch (Exception ignored){
 
             }
-                }
+        }
         );
 
         JButton openTable = new JButton("Load Table");
@@ -156,6 +156,7 @@ public class KenkenFrame extends JFrame{
         public void run() {
             solver.solve();
         }
+
     }
 
 }

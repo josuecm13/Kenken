@@ -83,11 +83,8 @@ public class Solver{
                         case 1:
                             permutations = permutation.permutateOne(target);
                             break;
-                        case 2:
-                            permutations = permutation.permutateTwo(op, target);
-                            break;
-                        case 4:
-                            permutations = permutation.permutateFour(shape, op, target);
+                        default:
+                            permutations = permutation.permut(length, target, op, shape);
                             break;
                     }
                     shape.permutations = permutations;
@@ -110,8 +107,10 @@ public class Solver{
     }
 
     private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) {
-        view.getkPanel().getBoard().setBoard(matrix.clone());
-        view.getkPanel().repaint();
+        synchronized (this) {
+            view.getkPanel().getBoard().setBoard(matrix.clone());
+            view.getkPanel().repaint();
+        }
         if (complete(counter, matrix.clone())) {
             System.out.println("########  Resultado  ########");
             printMatrix(matrix.clone());
