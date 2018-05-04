@@ -118,7 +118,8 @@ public class Operate {
     public ArrayList<int[]> shapePodeFour(Shape shape, ArrayList<int[]> shapes) {
         List<int[]> toRemove = new ArrayList();
         for (int[] array : shapes) {
-            if ((shape.getID() != Shape.ShapeTypeID.TTYPE ) && (shape.getID() != Shape.ShapeTypeID.ZTYPE)) {
+            if ((shape.getID() != Shape.ShapeTypeID.TTYPE ) && (shape.getID() != Shape.ShapeTypeID.ZTYPE)
+                    && (shape.getID() != Shape.ShapeTypeID.LTYPE)) {
                 if (array[0] == array[1]) {
                     toRemove.add(array);
                 }

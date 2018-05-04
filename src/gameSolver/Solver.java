@@ -123,8 +123,6 @@ public class Solver{
             view.getkPanel().repaint();
         }
         if (complete(counter, matrix.clone())) {
-            System.out.println("########  Resultado  ########");
-            printMatrix(matrix.clone());
             return true;
         }
         int size = (matrix.length);
