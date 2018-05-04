@@ -38,14 +38,26 @@
   </board>
   <shapeboard>
     <gameboard.logic.shapes.Shape-array>
-      <gameboard.logic.shapes.Jtype>
+      <gameboard.logic.shapes.Ttype>
         <orientations>
           <int-array-array>
             <int-array>
+              <int>1</int>
+              <int>1</int>
+              <int>1</int>
+            </int-array>
+            <int-array>
               <int>0</int>
               <int>1</int>
               <int>0</int>
             </int-array>
+            <int-array>
+              <int>0</int>
+              <int>0</int>
+              <int>0</int>
+            </int-array>
+          </int-array-array>
+          <int-array-array>
             <int-array>
               <int>0</int>
               <int>1</int>
@@ -54,6 +66,28 @@
             <int-array>
               <int>1</int>
               <int>1</int>
+              <int>0</int>
+            </int-array>
+            <int-array>
+              <int>0</int>
+              <int>1</int>
+              <int>0</int>
+            </int-array>
+          </int-array-array>
+          <int-array-array>
+            <int-array>
+              <int>0</int>
+              <int>1</int>
+              <int>0</int>
+            </int-array>
+            <int-array>
+              <int>1</int>
+              <int>1</int>
+              <int>1</int>
+            </int-array>
+            <int-array>
+              <int>0</int>
+              <int>0</int>
               <int>0</int>
             </int-array>
           </int-array-array>
@@ -66,44 +100,10 @@
             <int-array>
               <int>1</int>
               <int>1</int>
-              <int>1</int>
-            </int-array>
-            <int-array>
-              <int>0</int>
-              <int>0</int>
-              <int>0</int>
-            </int-array>
-          </int-array-array>
-          <int-array-array>
-            <int-array>
-              <int>1</int>
-              <int>1</int>
               <int>0</int>
             </int-array>
             <int-array>
               <int>1</int>
-              <int>0</int>
-              <int>0</int>
-            </int-array>
-            <int-array>
-              <int>1</int>
-              <int>0</int>
-              <int>0</int>
-            </int-array>
-          </int-array-array>
-          <int-array-array>
-            <int-array>
-              <int>1</int>
-              <int>1</int>
-              <int>1</int>
-            </int-array>
-            <int-array>
-              <int>0</int>
-              <int>0</int>
-              <int>1</int>
-            </int-array>
-            <int-array>
-              <int>0</int>
               <int>0</int>
               <int>0</int>
             </int-array>
@@ -125,98 +125,28 @@
             <int>1</int>
           </int-array>
           <int-array>
-            <int>1</int>
-            <int>0</int>
-          </int-array>
-          <int-array>
-            <int>2</int>
-            <int>0</int>
-          </int-array>
-        </coordinates>
-        <solved>false</solved>
-        <head>
-          <int>0</int>
-          <int>0</int>
-        </head>
-        <operation>ADD</operation>
-        <objective>9</objective>
-        <ID>JTYPE</ID>
-        <range>5</range>
-        <isRandom>false</isRandom>
-        <visited>false</visited>
-      </gameboard.logic.shapes.Jtype>
-      <gameboard.logic.shapes.Jtype reference="../gameboard.logic.shapes.Jtype"/>
-      <gameboard.logic.shapes.Jtype>
-        <orientations reference="../../gameboard.logic.shapes.Jtype/orientations"/>
-        <number>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-        </number>
-        <coordinates>
-          <int-array>
             <int>0</int>
             <int>2</int>
-          </int-array>
-          <int-array>
-            <int>0</int>
-            <int>3</int>
           </int-array>
           <int-array>
             <int>1</int>
-            <int>2</int>
-          </int-array>
-          <int-array>
-            <int>2</int>
-            <int>2</int>
+            <int>1</int>
           </int-array>
         </coordinates>
         <solved>false</solved>
         <head>
           <int>0</int>
-          <int>2</int>
+          <int>0</int>
         </head>
-        <operation>SUB</operation>
-        <objective>-7</objective>
-        <ID>JTYPE</ID>
+        <operation>MUL</operation>
+        <objective>24</objective>
+        <ID>TTYPE</ID>
         <range>5</range>
         <isRandom>false</isRandom>
         <visited>false</visited>
-      </gameboard.logic.shapes.Jtype>
-      <gameboard.logic.shapes.Jtype reference="../gameboard.logic.shapes.Jtype[3]"/>
-      <gameboard.logic.shapes.OneType>
-        <orientations>
-          <int-array-array>
-            <int-array>
-              <int>1</int>
-            </int-array>
-          </int-array-array>
-        </orientations>
-        <number>
-          <int>0</int>
-        </number>
-        <coordinates>
-          <int-array>
-            <int>0</int>
-            <int>4</int>
-          </int-array>
-        </coordinates>
-        <solved>false</solved>
-        <head>
-          <int>0</int>
-          <int>4</int>
-        </head>
-        <operation>EXP</operation>
-        <objective>27</objective>
-        <ID>ONETYPE</ID>
-        <range>5</range>
-        <isRandom>false</isRandom>
-        <visited>false</visited>
-      </gameboard.logic.shapes.OneType>
-    </gameboard.logic.shapes.Shape-array>
-    <gameboard.logic.shapes.Shape-array>
-      <gameboard.logic.shapes.Jtype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Jtype"/>
+      </gameboard.logic.shapes.Ttype>
+      <gameboard.logic.shapes.Ttype reference="../gameboard.logic.shapes.Ttype"/>
+      <gameboard.logic.shapes.Ttype reference="../gameboard.logic.shapes.Ttype"/>
       <gameboard.logic.shapes.Itype>
         <orientations>
           <int-array-array>
@@ -280,47 +210,101 @@
         </number>
         <coordinates>
           <int-array>
+            <int>0</int>
+            <int>3</int>
+          </int-array>
+          <int-array>
             <int>1</int>
-            <int>1</int>
+            <int>3</int>
           </int-array>
           <int-array>
             <int>2</int>
-            <int>1</int>
+            <int>3</int>
           </int-array>
           <int-array>
             <int>3</int>
-            <int>1</int>
-          </int-array>
-          <int-array>
-            <int>4</int>
-            <int>1</int>
+            <int>3</int>
           </int-array>
         </coordinates>
         <solved>false</solved>
         <head>
-          <int>1</int>
-          <int>1</int>
+          <int>0</int>
+          <int>3</int>
         </head>
         <operation>SUB</operation>
-        <objective>-6</objective>
+        <objective>-8</objective>
         <ID>ITYPE</ID>
         <range>5</range>
         <isRandom>false</isRandom>
         <visited>false</visited>
       </gameboard.logic.shapes.Itype>
-      <gameboard.logic.shapes.Jtype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Jtype[3]"/>
-      <gameboard.logic.shapes.Stype>
+      <gameboard.logic.shapes.OneType>
         <orientations>
           <int-array-array>
             <int-array>
-              <int>0</int>
-              <int>1</int>
               <int>1</int>
             </int-array>
+          </int-array-array>
+        </orientations>
+        <number>
+          <int>0</int>
+        </number>
+        <coordinates>
+          <int-array>
+            <int>0</int>
+            <int>4</int>
+          </int-array>
+        </coordinates>
+        <solved>false</solved>
+        <head>
+          <int>0</int>
+          <int>4</int>
+        </head>
+        <operation>EXP</operation>
+        <objective>1</objective>
+        <ID>ONETYPE</ID>
+        <range>5</range>
+        <isRandom>false</isRandom>
+        <visited>false</visited>
+      </gameboard.logic.shapes.OneType>
+    </gameboard.logic.shapes.Shape-array>
+    <gameboard.logic.shapes.Shape-array>
+      <gameboard.logic.shapes.OneType>
+        <orientations reference="../../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.OneType/orientations"/>
+        <number>
+          <int>0</int>
+        </number>
+        <coordinates>
+          <int-array>
+            <int>1</int>
+            <int>0</int>
+          </int-array>
+        </coordinates>
+        <solved>false</solved>
+        <head>
+          <int>1</int>
+          <int>0</int>
+        </head>
+        <operation>EXP</operation>
+        <objective>0</objective>
+        <ID>ONETYPE</ID>
+        <range>5</range>
+        <isRandom>false</isRandom>
+        <visited>false</visited>
+      </gameboard.logic.shapes.OneType>
+      <gameboard.logic.shapes.Ttype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Ttype"/>
+      <gameboard.logic.shapes.Ztype>
+        <orientations>
+          <int-array-array>
             <int-array>
               <int>1</int>
               <int>1</int>
               <int>0</int>
+            </int-array>
+            <int-array>
+              <int>0</int>
+              <int>1</int>
+              <int>1</int>
             </int-array>
             <int-array>
               <int>0</int>
@@ -330,18 +314,18 @@
           </int-array-array>
           <int-array-array>
             <int-array>
-              <int>1</int>
               <int>0</int>
-              <int>0</int>
-            </int-array>
-            <int-array>
-              <int>1</int>
               <int>1</int>
               <int>0</int>
             </int-array>
             <int-array>
-              <int>0</int>
               <int>1</int>
+              <int>1</int>
+              <int>0</int>
+            </int-array>
+            <int-array>
+              <int>1</int>
+              <int>0</int>
               <int>0</int>
             </int-array>
           </int-array-array>
@@ -355,89 +339,34 @@
         <coordinates>
           <int-array>
             <int>1</int>
-            <int>3</int>
+            <int>2</int>
           </int-array>
           <int-array>
             <int>2</int>
-            <int>3</int>
+            <int>1</int>
           </int-array>
           <int-array>
             <int>2</int>
-            <int>4</int>
+            <int>2</int>
           </int-array>
           <int-array>
             <int>3</int>
-            <int>4</int>
+            <int>1</int>
           </int-array>
         </coordinates>
         <solved>false</solved>
         <head>
           <int>1</int>
-          <int>3</int>
+          <int>2</int>
         </head>
         <operation>SUB</operation>
         <objective>-4</objective>
-        <ID>STYPE</ID>
+        <ID>ZTYPE</ID>
         <range>5</range>
         <isRandom>false</isRandom>
         <visited>false</visited>
-      </gameboard.logic.shapes.Stype>
-      <gameboard.logic.shapes.OneType>
-        <orientations reference="../../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.OneType/orientations"/>
-        <number>
-          <int>0</int>
-        </number>
-        <coordinates>
-          <int-array>
-            <int>1</int>
-            <int>4</int>
-          </int-array>
-        </coordinates>
-        <solved>false</solved>
-        <head>
-          <int>1</int>
-          <int>4</int>
-        </head>
-        <operation>EXP</operation>
-        <objective>8</objective>
-        <ID>ONETYPE</ID>
-        <range>5</range>
-        <isRandom>false</isRandom>
-        <visited>false</visited>
-      </gameboard.logic.shapes.OneType>
-    </gameboard.logic.shapes.Shape-array>
-    <gameboard.logic.shapes.Shape-array>
-      <gameboard.logic.shapes.Jtype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Jtype"/>
-      <gameboard.logic.shapes.Itype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Itype"/>
-      <gameboard.logic.shapes.Jtype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Jtype[3]"/>
-      <gameboard.logic.shapes.Stype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Stype"/>
-      <gameboard.logic.shapes.Stype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Stype"/>
-    </gameboard.logic.shapes.Shape-array>
-    <gameboard.logic.shapes.Shape-array>
-      <gameboard.logic.shapes.OneType>
-        <orientations reference="../../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.OneType/orientations"/>
-        <number>
-          <int>0</int>
-        </number>
-        <coordinates>
-          <int-array>
-            <int>3</int>
-            <int>0</int>
-          </int-array>
-        </coordinates>
-        <solved>false</solved>
-        <head>
-          <int>3</int>
-          <int>0</int>
-        </head>
-        <operation>EXP</operation>
-        <objective>1</objective>
-        <ID>ONETYPE</ID>
-        <range>5</range>
-        <isRandom>false</isRandom>
-        <visited>false</visited>
-      </gameboard.logic.shapes.OneType>
-      <gameboard.logic.shapes.Itype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Itype"/>
+      </gameboard.logic.shapes.Ztype>
+      <gameboard.logic.shapes.Itype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Itype"/>
       <gameboard.logic.shapes.TwoType>
         <orientations>
           <int-array-array>
@@ -467,12 +396,88 @@
         </number>
         <coordinates>
           <int-array>
+            <int>1</int>
+            <int>4</int>
+          </int-array>
+          <int-array>
+            <int>2</int>
+            <int>4</int>
+          </int-array>
+        </coordinates>
+        <solved>false</solved>
+        <head>
+          <int>1</int>
+          <int>4</int>
+        </head>
+        <operation>DIV</operation>
+        <objective>2</objective>
+        <ID>TWOTYPE</ID>
+        <range>5</range>
+        <isRandom>false</isRandom>
+        <visited>false</visited>
+      </gameboard.logic.shapes.TwoType>
+    </gameboard.logic.shapes.Shape-array>
+    <gameboard.logic.shapes.Shape-array>
+      <gameboard.logic.shapes.TwoType>
+        <orientations reference="../../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.TwoType/orientations"/>
+        <number>
+          <int>0</int>
+          <int>0</int>
+        </number>
+        <coordinates>
+          <int-array>
+            <int>2</int>
+            <int>0</int>
+          </int-array>
+          <int-array>
+            <int>3</int>
+            <int>0</int>
+          </int-array>
+        </coordinates>
+        <solved>false</solved>
+        <head>
+          <int>2</int>
+          <int>0</int>
+        </head>
+        <operation>DIV</operation>
+        <objective>3</objective>
+        <ID>TWOTYPE</ID>
+        <range>5</range>
+        <isRandom>false</isRandom>
+        <visited>false</visited>
+      </gameboard.logic.shapes.TwoType>
+      <gameboard.logic.shapes.Ztype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Ztype"/>
+      <gameboard.logic.shapes.Ztype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Ztype"/>
+      <gameboard.logic.shapes.Itype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Itype"/>
+      <gameboard.logic.shapes.TwoType reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.TwoType"/>
+    </gameboard.logic.shapes.Shape-array>
+    <gameboard.logic.shapes.Shape-array>
+      <gameboard.logic.shapes.TwoType reference="../../gameboard.logic.shapes.Shape-array[3]/gameboard.logic.shapes.TwoType"/>
+      <gameboard.logic.shapes.Ztype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Ztype"/>
+      <gameboard.logic.shapes.Ttype>
+        <orientations reference="../../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Ttype/orientations"/>
+        <number>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+        </number>
+        <coordinates>
+          <int-array>
             <int>3</int>
             <int>2</int>
           </int-array>
           <int-array>
             <int>4</int>
+            <int>1</int>
+          </int-array>
+          <int-array>
+            <int>4</int>
             <int>2</int>
+          </int-array>
+          <int-array>
+            <int>4</int>
+            <int>3</int>
           </int-array>
         </coordinates>
         <solved>false</solved>
@@ -480,13 +485,14 @@
           <int>3</int>
           <int>2</int>
         </head>
-        <operation>SUB</operation>
-        <objective>-1</objective>
-        <ID>TWOTYPE</ID>
+        <operation>ADD</operation>
+        <objective>6</objective>
+        <ID>TTYPE</ID>
         <range>5</range>
         <isRandom>false</isRandom>
         <visited>false</visited>
-      </gameboard.logic.shapes.TwoType>
+      </gameboard.logic.shapes.Ttype>
+      <gameboard.logic.shapes.Itype reference="../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.Itype"/>
       <gameboard.logic.shapes.OneType>
         <orientations reference="../../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.OneType/orientations"/>
         <number>
@@ -495,13 +501,13 @@
         <coordinates>
           <int-array>
             <int>3</int>
-            <int>3</int>
+            <int>4</int>
           </int-array>
         </coordinates>
         <solved>false</solved>
         <head>
           <int>3</int>
-          <int>3</int>
+          <int>4</int>
         </head>
         <operation>EXP</operation>
         <objective>0</objective>
@@ -510,7 +516,6 @@
         <isRandom>false</isRandom>
         <visited>false</visited>
       </gameboard.logic.shapes.OneType>
-      <gameboard.logic.shapes.Stype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Stype"/>
     </gameboard.logic.shapes.Shape-array>
     <gameboard.logic.shapes.Shape-array>
       <gameboard.logic.shapes.OneType>
@@ -530,37 +535,15 @@
           <int>0</int>
         </head>
         <operation>EXP</operation>
-        <objective>8</objective>
+        <objective>64</objective>
         <ID>ONETYPE</ID>
         <range>5</range>
         <isRandom>false</isRandom>
         <visited>false</visited>
       </gameboard.logic.shapes.OneType>
-      <gameboard.logic.shapes.Itype reference="../../gameboard.logic.shapes.Shape-array[2]/gameboard.logic.shapes.Itype"/>
-      <gameboard.logic.shapes.TwoType reference="../../gameboard.logic.shapes.Shape-array[4]/gameboard.logic.shapes.TwoType"/>
-      <gameboard.logic.shapes.OneType>
-        <orientations reference="../../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.OneType/orientations"/>
-        <number>
-          <int>0</int>
-        </number>
-        <coordinates>
-          <int-array>
-            <int>4</int>
-            <int>3</int>
-          </int-array>
-        </coordinates>
-        <solved>false</solved>
-        <head>
-          <int>4</int>
-          <int>3</int>
-        </head>
-        <operation>EXP</operation>
-        <objective>1</objective>
-        <ID>ONETYPE</ID>
-        <range>5</range>
-        <isRandom>false</isRandom>
-        <visited>false</visited>
-      </gameboard.logic.shapes.OneType>
+      <gameboard.logic.shapes.Ttype reference="../../gameboard.logic.shapes.Shape-array[4]/gameboard.logic.shapes.Ttype"/>
+      <gameboard.logic.shapes.Ttype reference="../../gameboard.logic.shapes.Shape-array[4]/gameboard.logic.shapes.Ttype"/>
+      <gameboard.logic.shapes.Ttype reference="../../gameboard.logic.shapes.Shape-array[4]/gameboard.logic.shapes.Ttype"/>
       <gameboard.logic.shapes.OneType>
         <orientations reference="../../../gameboard.logic.shapes.Shape-array/gameboard.logic.shapes.OneType/orientations"/>
         <number>
@@ -578,7 +561,7 @@
           <int>4</int>
         </head>
         <operation>EXP</operation>
-        <objective>0</objective>
+        <objective>27</objective>
         <ID>ONETYPE</ID>
         <range>5</range>
         <isRandom>false</isRandom>
