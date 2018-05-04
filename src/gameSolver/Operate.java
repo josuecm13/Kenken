@@ -24,86 +24,95 @@ public class Operate {
         return arrayList;
     }
 
-    public ArrayList<int[]> permutateTwo(String operation, int target) {
-        ArrayList<int[]> result = new ArrayList<>();
-        for (int i = 0; i < (numArray.size()); i++) {
-            for (int j = 0; j < (numArray.size()); j++) {
-                if (numArray.get(i) == numArray.get(j)) {
-                    continue;
-                }
-                switch (operation) {
-                    case "+":
-                        if (numArray.get(i) + numArray.get(j) == target) {
-                            int[] array = {numArray.get(i), numArray.get(j)};
-                            result.add(array);
-                        }
-                        break;
-                    case  "-":
-                        if (numArray.get(i) - numArray.get(j) == target) {
-                            int[] array = {numArray.get(i), numArray.get(j)};
-                            result.add(array);
-                        }
-                        break;
-                    case "x":
-                        if (numArray.get(i) * numArray.get(j) == target) {
-                            int[] array = {numArray.get(i), numArray.get(j)};
-                            result.add(array);
-                        }
-                        break;
-                    case "÷":
-                        if (!(numArray.get(j) == 0)) {
-                            if (numArray.get(i) / numArray.get(j) == target) {
-                                int[] array = {numArray.get(i), numArray.get(j)};
-                                result.add(array);
-                            }
-                        }
-                        break;
-                    case  "%":
-                        if (!(numArray.get(j) == 0)) {
-                            if (numArray.get(i) % numArray.get(j) == target) {
-                                int[] array = {numArray.get(i), numArray.get(j)};
-                                result.add(array);
-                            }
-                        }
-                        break;
-                }
-            }
+    public ArrayList<int[]> permut(int size, int target, String operation, Shape shape) {
+        ArrayList<int[]> nums = new ArrayList<>();
+        int[] num = new int[size];
+        rep(nums, numArray, num, 0, target, operation);
+        if (size == 4) {
+            shapePodeFour(shape, nums);
         }
-        return result;
+        return nums;
     }
 
-    public ArrayList<int[]> permutateFour(Shape shape, String operation, int target){
-        ArrayList<int[]> result = new ArrayList<>();
-        for (int  i = 0; i < numArray.size(); i++) {
-            for (int j = 0; j < numArray.size(); j++) {
-                for (int k = 0; k < numArray.size(); k++) {
-                    for (int l = 0; l < numArray.size(); l++) {
-                        switch (operation) {
-                            case "+":
-                                if (numArray.get(i) + numArray.get(j) + numArray.get(k) + numArray.get(l) == target) {
-                                    int[] array = {numArray.get(i), numArray.get(j), numArray.get(k), numArray.get(l)};
-                                    result.add(array);
-                                }
-                                break;
-                            case "-":
-                                if (numArray.get(i) - numArray.get(j) - numArray.get(k) - numArray.get(l) == target) {
-                                    int[] array = {numArray.get(i), numArray.get(j), numArray.get(k), numArray.get(l)};
-                                    result.add(array);
-                                }
-                                break;
-                            case "x":
-                                if (numArray.get(i) * numArray.get(j) * numArray.get(k) * numArray.get(l) == target) {
-                                    int[] array = {numArray.get(i), numArray.get(j), numArray.get(k), numArray.get(l)};
-                                    result.add(array);
-                                }
-                                break;
-                        }
+    private void rep(ArrayList<int[]> reps, ArrayList<Integer> input, int[] item, int count, int target, String operation) {
+        if (count < item.length){
+            for (int i = 0; i < input.size(); i++) {
+                item[count] = input.get(i);
+                rep(reps, input, item, count+1, target, operation);
+            }
+        }else{
+            switch (item.length) {
+                case 2:
+                    if (operateTwo(target ,operation,item)) {
+                        reps.add(item.clone());
                     }
-                }
+                    break;
+                case 4:
+                    if (operateFour(target ,operation,item)) {
+                        reps.add(item.clone());
+                    }
+                    break;
             }
         }
-        shapePodeFour(shape, result);
-        return result;
+    }
+
+    private boolean operateTwo(int target, String operation, int[] array) {
+        if (array[0] == array[1]) {
+            return false;
+        }
+        switch (operation) {
+            case "+":
+                if ((array[0] + array[1]) == target) {
+                    return true;
+                }
+                break;
+            case  "-":
+                if ((array[0] - array[1]) == target) {
+                    return true;
+                }
+                break;
+            case "x":
+                if ((array[0] * array[1]) == target) {
+                    return true;
+                }
+                break;
+            case "÷":
+                if (!(array[1] == 0)) {
+                    if ((array[0] / array[1]) == target) {
+                        return true;
+                    }
+                }
+                break;
+            case  "%":
+                if (!(array[1] == 0)) {
+                    if ((array[0] % array[1]) == target) {
+                        return true;
+                    }
+                }
+                break;
+        }
+        return false;
+    }
+
+    private boolean operateFour(int target, String operation, int[] array) {
+        switch (operation) {
+            case "+":
+                if ((array[0] + array[1] + array[2] + array[3]) == target) {
+                    return true;
+                }
+                break;
+            case  "-":
+                if ((array[0] - array[1] - array[2] - array[3]) == target) {
+                    return true;
+                }
+                break;
+            case "x":
+                if ((array[0] * array[1] * array[2] * array[3]) == target) {
+                    return true;
+                }
+                break;
+        }
+        return false;
     }
 
     public ArrayList<int[]> shapePodeFour(Shape shape, ArrayList<int[]> shapes) {
@@ -123,6 +132,11 @@ public class Operate {
             if ((shape.getID() != Shape.ShapeTypeID.LTYPE ) && (shape.getID() != Shape.ShapeTypeID.ZTYPE)
                     && (shape.getID() != Shape.ShapeTypeID.TTYPE )) {
                 if (array[2] == array[3]) {
+                    toRemove.add(array);
+                }
+            }
+            if ((shape.getID() == Shape.ShapeTypeID.ITYPE ) || (shape.getID() == Shape.ShapeTypeID.OTYPE)) {
+                if (array[2] == array[0] || array[1] == array[3]) {
                     toRemove.add(array);
                 }
             }
