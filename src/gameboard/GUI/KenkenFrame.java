@@ -154,6 +154,7 @@ public class KenkenFrame extends JFrame{
 
         @Override
         public void run() {
+
             solver.solve();
         }
 

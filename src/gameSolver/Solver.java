@@ -87,6 +87,7 @@ public class Solver{
                             permutations = permutation.permut(length, target, op, shape);
                             break;
                     }
+                    //randomize(permutations);
                     shape.permutations = permutations;
                     shape.visited = true;
                 }
@@ -104,6 +105,16 @@ public class Solver{
             System.out.println();
         }
         System.out.println();
+    }
+
+    private void randomize(ArrayList<int[]> permutations) {
+        Random random = new Random();
+        int rand;
+        for (int i = 0; i < permutations.size(); i++) {
+            rand = random.nextInt(permutations.size());
+            int[] array = permutations.remove(0);
+            permutations.add(rand, array);
+        }
     }
 
     private boolean solveAux(int row, int column, int[][] matrix, Shape[][] shapeBoard, int counter) {
@@ -177,11 +188,15 @@ public class Solver{
     }
 
     public void solve() {
+        long startTime = System.nanoTime();
         int pows = solvePows();
-        if(solveAux(0, 0, board, shapeboard, pows))
-            JOptionPane.showMessageDialog(null, "The table has been solved","Solution", JOptionPane.INFORMATION_MESSAGE);
-        else
-            JOptionPane.showMessageDialog(null, "The table is unsolvable","Solution", JOptionPane.ERROR_MESSAGE);
+        if(solveAux(0, 0, board, shapeboard, pows)) {
+            long endTime = System.nanoTime();
+            JOptionPane.showMessageDialog(null, "The table has been solved in " + String.valueOf((endTime-startTime)/1000000), "Solution", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            long endTime = System.nanoTime();
+            JOptionPane.showMessageDialog(null, "The table is unsolvable in " + String.valueOf((endTime-startTime)/1000000), "Solution", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private int solvePows() {
@@ -212,4 +227,5 @@ public class Solver{
     public void setView(KenkenFrame view) {
         this.view = view;
     }
+
 }

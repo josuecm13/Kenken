@@ -177,9 +177,11 @@ public class KenkenPanel extends JPanel {
                 if(matrix[i][j] == Integer.MIN_VALUE) {
                     j++;
                     continue;
+                } else {
+                    g2d.setFont(new Font(Font.MONOSPACED,Font.BOLD,numFontSize));
+                    g2d.drawString(Integer.toString(matrix[i][j]),x+numGapX,y+numGapY);
                 }
-                g2d.setFont(new Font(Font.MONOSPACED,Font.BOLD,numFontSize));
-                g2d.drawString(Integer.toString(matrix[i][j]),x+numGapX,y+numGapY);
+
                 j++;
             }
             j=0;
