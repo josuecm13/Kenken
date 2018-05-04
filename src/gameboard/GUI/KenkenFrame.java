@@ -19,6 +19,7 @@ public class KenkenFrame extends JFrame{
     private KenkenPanel kPanel;
     private JComboBox<Object> comboBox;
     private JComboBox<Boolean> randComboBox;
+    private JComboBox<Boolean> randPermutationComboBox;
     private FileReader reader;
     private final XStream xStream;
     private PrintWriter out;
@@ -46,6 +47,10 @@ public class KenkenFrame extends JFrame{
         randComboBox.addItem(false);
         randComboBox.addItem(true);
 
+        randPermutationComboBox = new JComboBox<>();
+        randPermutationComboBox.addItem(false);
+        randPermutationComboBox.addItem(true);
+
         JButton generatorButton = new JButton("New Table");
         generatorButton.addActionListener(e -> {try{
             this.rebuildInterface((int) comboBox.getItemAt(comboBox.getSelectedIndex()), true);
@@ -55,7 +60,7 @@ public class KenkenFrame extends JFrame{
 
         JButton solveButton = new JButton("Solve");
         solveButton.addActionListener(e ->{
-            FrameUpdater updater = new FrameUpdater(new Solver(kPanel.getBoard(),kPanel.getBoard().getNumRows()),this);
+            FrameUpdater updater = new FrameUpdater(new Solver(kPanel.getBoard(),kPanel.getBoard().getNumRows(),randPermutationComboBox.getItemAt(randPermutationComboBox.getSelectedIndex())),this);
             Thread t = new Thread(updater);
             t.start();
 
@@ -115,6 +120,7 @@ public class KenkenFrame extends JFrame{
         windowPanel.add(randComboBox);
         windowPanel.add(generatorButton);
         windowPanel.add(saveTable);
+        windowPanel.add(randPermutationComboBox);
         windowPanel.add(openTable);
         windowPanel.add(solveButton);
         this.add(windowPanel);

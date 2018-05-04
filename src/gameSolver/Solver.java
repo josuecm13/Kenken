@@ -19,12 +19,23 @@ public class Solver{
     private Operate permutation;
     private KenkenBoard kenkenBoard;
     private KenkenFrame view;
+    private boolean random;
     private int shapeNum;
     private int board[][];
     private Shape shapeboard[][];
 
     public Solver(KenkenBoard board, int length) {
         this.kenkenBoard = board;
+        this.board = kenkenBoard.getBoard();
+        this.shapeboard = kenkenBoard.getShapeboard();
+        permutation = new Operate(generateNumbers(length));
+        shapeNum = countShapes(board.getShapeboard());
+        random = false;
+    }
+
+    public Solver(KenkenBoard board, int length, boolean random) {
+        this.kenkenBoard = board;
+        this.random = random;
         this.board = kenkenBoard.getBoard();
         this.shapeboard = kenkenBoard.getShapeboard();
         permutation = new Operate(generateNumbers(length));
@@ -87,7 +98,8 @@ public class Solver{
                             permutations = permutation.permut(length, target, op, shape);
                             break;
                     }
-                    //randomize(permutations);
+                    if(random)
+                        randomize(permutations);
                     shape.permutations = permutations;
                     shape.visited = true;
                 }
