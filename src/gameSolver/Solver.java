@@ -102,6 +102,7 @@ public class Solver{
                         randomize(permutations);
                     shape.permutations = permutations;
                     shape.visited = true;
+                    System.out.println(permutations.size());
                 }
             }
         }
@@ -143,6 +144,7 @@ public class Solver{
             return solveAux(column == size-1 ? (row % size) + 1 : (row % size), column == size-1 ? 0 : (column % size) + 1, matrix, shapeBoard, counter);
         }
         ArrayList<int[]> permutations = shape.permutations;
+
         for (int[] p : permutations) {
             shape.number = p.clone();
             if (valid(shape.setPermutation(matrix).clone())) {

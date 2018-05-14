@@ -123,16 +123,13 @@ public class Operate {
                 if (array[0] == array[1]) {
                     toRemove.add(array);
                 }
+                if (array[2] == array[3]) {
+                    toRemove.add(array);
+                }
             }
             if ((shape.getID() != Shape.ShapeTypeID.JTYPE ) && (shape.getID() != Shape.ShapeTypeID.OTYPE)
                     && (shape.getID() != Shape.ShapeTypeID.STYPE )) {
                 if (array[2] == array[1]) {
-                    toRemove.add(array);
-                }
-            }
-            if ((shape.getID() != Shape.ShapeTypeID.LTYPE ) && (shape.getID() != Shape.ShapeTypeID.ZTYPE)
-                    && (shape.getID() != Shape.ShapeTypeID.TTYPE )) {
-                if (array[2] == array[3]) {
                     toRemove.add(array);
                 }
             }
